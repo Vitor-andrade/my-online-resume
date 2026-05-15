@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "title": "Vitor Cavalcante — Senior Fullstack Engineer",
+    "description": "Online résumé of Vitor Cavalcante, a Senior Fullstack Engineer with 6+ years building scalable, cloud-native web and mobile platforms."
+  },
+  "nav": {
+    "skills": "Skills",
+    "experience": "Experience",
+    "achievements": "Achievements",
+    "projects": "Projects",
+    "contact": "Contact",
+    "navigation": "Navigation",
+    "openMenu": "Open menu",
+    "toggleTheme": "Toggle light and dark theme",
+    "selectLanguage": "Select language"
+  },
+  "hero": {
+    "getInTouch": "Get in touch",
+    "downloadCv": "Download CV"
+  },
+  "sections": {
+    "skills": {
+      "eyebrow": "what i work with",
+      "title": "Skills & Tech Stack",
+      "description": "Six-plus years across frontend, backend, mobile and cloud — with a growing focus on AI-assisted engineering.",
+      "focus": "focus",
+      "latestOnGithub": "latest on github"
+    },
+    "experience": {
+      "eyebrow": "where i've worked",
+      "title": "Work Experience",
+      "description": "Senior roles building and scaling production web and mobile platforms."
+    },
+    "education": {
+      "eyebrow": "how i got here",
+      "title": "Education",
+      "description": "Formal background in computer engineering and cybersecurity."
+    },
+    "achievements": {
+      "eyebrow": "proof of impact",
+      "title": "Key Achievements",
+      "description": "Selected work where engineering translated directly into business outcomes. Open one for the full case study."
+    },
+    "projects": {
+      "eyebrow": "things i've built",
+      "title": "Projects",
+      "description": "Selected public work. Private client projects are shown without a repository link."
+    },
+    "certifications": {
+      "eyebrow": "continued learning",
+      "title": "Certifications"
+    },
+    "contact": {
+      "eyebrow": "get in touch",
+      "title": "Let's build something",
+      "description": "Have an engineering challenge, an architecture question or a collaboration in mind? The fastest way to reach me is email.",
+      "emailMe": "Email me"
+    }
+  },
+  "projectCard": {
+    "privateRepo": "Private repository"
+  },
+  "achievement": {
+    "back": "All achievements",
+    "overview": "Overview",
+    "impact": "Impact",
+    "tech": "Tech"
+  },
+  "cv": {
+    "backToSite": "Back to site",
+    "print": "Print / Save as PDF",
+    "summary": "Summary",
+    "experience": "Experience",
+    "achievements": "Key Achievements",
+    "skills": "Skills",
+    "education": "Education",
+    "certifications": "Certifications",
+    "languages": "Languages"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "printResume": "Print résumé",
+    "designSystem": "Design System",
+    "builtWith": "Built with Next.js · Crafted with Claude + Cursor"
+  }
+}

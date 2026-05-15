@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { setRequestLocale } from "next-intl/server";
 import { Cluster, Container, Grid, Stack } from "@/components/layout";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
@@ -77,7 +78,14 @@ function Section({
   );
 }
 
-export default function DesignSystemPage() {
+export default async function DesignSystemPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <Container size="lg" className="py-12 sm:py-16">
       <Stack gap="xl">

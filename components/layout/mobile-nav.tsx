@@ -1,8 +1,8 @@
 "use client";
 
 import { Menu } from "lucide-react";
-import Link from "next/link";
 import { Stack } from "@/components/layout";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,

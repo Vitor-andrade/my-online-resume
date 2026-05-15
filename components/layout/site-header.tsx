@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { Cluster, Container } from "@/components/layout";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { profile } from "@/content";
+import { Link } from "@/i18n/navigation";
 
 // Anchors are absolute (/#id) so the header works from any route,
 // not only the landing page.

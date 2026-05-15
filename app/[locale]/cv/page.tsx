@@ -1,8 +1,9 @@
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { setRequestLocale } from "next-intl/server";
 import { PrintButton } from "@/components/composed/print-button";
 import { Cluster, Container, Stack } from "@/components/layout";
+import { Link } from "@/i18n/navigation";
 import {
   achievements,
   certifications,
@@ -35,7 +36,14 @@ function DocSection({
   );
 }
 
-export default function CvPage() {
+export default async function CvPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <main className="flex-1">
       <Container size="md" className="py-10 print:py-0">

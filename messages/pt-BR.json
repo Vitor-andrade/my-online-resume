@@ -1,0 +1,86 @@
+{
+  "metadata": {
+    "title": "Vitor Cavalcante — Engenheiro Fullstack Sênior",
+    "description": "Currículo online de Vitor Cavalcante, Engenheiro Fullstack Sênior com mais de 6 anos construindo plataformas web e mobile escaláveis e cloud-native."
+  },
+  "nav": {
+    "skills": "Habilidades",
+    "experience": "Experiência",
+    "achievements": "Conquistas",
+    "projects": "Projetos",
+    "contact": "Contato",
+    "navigation": "Navegação",
+    "openMenu": "Abrir menu",
+    "toggleTheme": "Alternar tema claro e escuro",
+    "selectLanguage": "Selecionar idioma"
+  },
+  "hero": {
+    "getInTouch": "Entre em contato",
+    "downloadCv": "Baixar CV"
+  },
+  "sections": {
+    "skills": {
+      "eyebrow": "com o que eu trabalho",
+      "title": "Habilidades & Stack",
+      "description": "Mais de seis anos entre frontend, backend, mobile e cloud — com foco crescente em engenharia assistida por IA.",
+      "focus": "destaque",
+      "latestOnGithub": "novidades no github"
+    },
+    "experience": {
+      "eyebrow": "onde eu trabalhei",
+      "title": "Experiência Profissional",
+      "description": "Funções sênior construindo e escalando plataformas web e mobile em produção."
+    },
+    "education": {
+      "eyebrow": "como cheguei aqui",
+      "title": "Formação",
+      "description": "Base formal em engenharia de computação e cibersegurança."
+    },
+    "achievements": {
+      "eyebrow": "prova de impacto",
+      "title": "Principais Conquistas",
+      "description": "Trabalhos selecionados em que a engenharia se traduziu diretamente em resultados de negócio. Abra um para ver o estudo de caso completo."
+    },
+    "projects": {
+      "eyebrow": "o que eu construí",
+      "title": "Projetos",
+      "description": "Trabalhos públicos selecionados. Projetos privados de clientes são exibidos sem link para o repositório."
+    },
+    "certifications": {
+      "eyebrow": "aprendizado contínuo",
+      "title": "Certificações"
+    },
+    "contact": {
+      "eyebrow": "fale comigo",
+      "title": "Vamos construir algo",
+      "description": "Tem um desafio de engenharia, uma dúvida de arquitetura ou uma colaboração em mente? A forma mais rápida de me encontrar é por e-mail.",
+      "emailMe": "Enviar e-mail"
+    }
+  },
+  "projectCard": {
+    "privateRepo": "Repositório privado"
+  },
+  "achievement": {
+    "back": "Todas as conquistas",
+    "overview": "Visão geral",
+    "impact": "Impacto",
+    "tech": "Tecnologias"
+  },
+  "cv": {
+    "backToSite": "Voltar ao site",
+    "print": "Imprimir / Salvar como PDF",
+    "summary": "Resumo",
+    "experience": "Experiência",
+    "achievements": "Principais Conquistas",
+    "skills": "Habilidades",
+    "education": "Formação",
+    "certifications": "Certificações",
+    "languages": "Idiomas"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "printResume": "Currículo para impressão",
+    "designSystem": "Design System",
+    "builtWith": "Construído com Next.js · Feito com Claude + Cursor"
+  }
+}

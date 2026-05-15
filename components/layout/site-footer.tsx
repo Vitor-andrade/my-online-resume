@@ -1,7 +1,7 @@
-import Link from "next/link";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { profile } from "@/content";
+import { Link } from "@/i18n/navigation";
 
 /** Site footer — identity, social links and build attribution. */
 export function SiteFooter() {

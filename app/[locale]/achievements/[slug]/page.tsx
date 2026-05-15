@@ -1,8 +1,9 @@
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
-import Link from "next/link";
+import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Metric } from "@/components/composed/metric";
+import { Link } from "@/i18n/navigation";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
@@ -19,7 +20,7 @@ export function generateStaticParams() {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
   const achievement = getAchievementBySlug(slug);
@@ -30,9 +31,10 @@ export async function generateMetadata({
 export default async function AchievementPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
   const achievement = getAchievementBySlug(slug);
   if (!achievement) notFound();
 

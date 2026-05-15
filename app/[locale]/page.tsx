@@ -1,3 +1,4 @@
+import { setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Achievements } from "@/components/sections/achievements";
@@ -9,7 +10,14 @@ import { Hero } from "@/components/sections/hero";
 import { Projects } from "@/components/sections/projects";
 import { Skills } from "@/components/sections/skills";
 
-export default function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   return (
     <>
       <SiteHeader />

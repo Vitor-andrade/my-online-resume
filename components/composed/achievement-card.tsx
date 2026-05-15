@@ -1,8 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import Link from "next/link";
 import { Cluster, Stack } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import type { Achievement } from "@/content";
+import { Link } from "@/i18n/navigation";
 import { Metric } from "./metric";
 
 /** Card for a key achievement — links to its dedicated case-study route. */
