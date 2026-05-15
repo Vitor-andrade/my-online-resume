@@ -1,15 +1,14 @@
+import { getTranslations } from "next-intl/server";
 import { Section } from "@/components/composed/section";
 import { Cluster, Stack } from "@/components/layout";
 import { certifications } from "@/content";
 
 /** Certifications section. */
-export function Certifications() {
+export async function Certifications() {
+  const t = await getTranslations("sections.certifications");
+
   return (
-    <Section
-      id="certifications"
-      eyebrow="continued learning"
-      title="Certifications"
-    >
+    <Section id="certifications" eyebrow={t("eyebrow")} title={t("title")}>
       <Stack as="ul" gap="sm">
         {certifications.map((cert) => (
           <li key={cert.name}>

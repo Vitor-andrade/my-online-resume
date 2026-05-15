@@ -1,6 +1,7 @@
 "use client";
 
 import { Moon, Sun } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 
@@ -9,12 +10,13 @@ import { Button } from "@/components/ui/button";
  *  to gate rendering on a mounted flag. */
 export function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
+  const t = useTranslations("nav");
 
   return (
     <Button
       variant="outline"
       size="icon"
-      aria-label="Toggle light and dark theme"
+      aria-label={t("toggleTheme")}
       onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
     >
       <Sun aria-hidden className="hidden dark:block" />

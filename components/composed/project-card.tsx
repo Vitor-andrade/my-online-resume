@@ -1,18 +1,20 @@
 import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Lock } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 import { Cluster, Stack } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/content";
 import { cn } from "@/lib/utils";
 
 /** Card for a featured project. Links to GitHub when the repo is public. */
-export function ProjectCard({
+export async function ProjectCard({
   name,
   description,
   githubUrl,
   stack,
   year,
 }: Project) {
+  const t = await getTranslations("projectCard");
   const body = (
     <Stack gap="md" className="h-full">
       <Stack gap="xs">
@@ -25,7 +27,7 @@ export function ProjectCard({
             />
           ) : (
             <Lock
-              aria-label="Private repository"
+              aria-label={t("privateRepo")}
               className="text-muted-foreground size-4 shrink-0"
             />
           )}

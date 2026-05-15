@@ -1,9 +1,13 @@
-export { profile } from "./profile";
-export { skills } from "./skills";
-export { experience } from "./experience";
-export { education } from "./education";
-export { achievements, getAchievementBySlug } from "./achievements";
-export { projects } from "./projects";
+export { getProfile } from "./profile";
+export { getSkills } from "./skills";
+export { getExperience } from "./experience";
+export { getEducation } from "./education";
+export {
+  achievementSlugs,
+  getAchievementBySlug,
+  getAchievements,
+} from "./achievements";
+export { getProjects } from "./projects";
 export { certifications } from "./certifications";
 export type {
   Achievement,

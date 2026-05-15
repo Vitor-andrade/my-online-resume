@@ -23,8 +23,7 @@
       "eyebrow": "com o que eu trabalho",
       "title": "Habilidades & Stack",
       "description": "Mais de seis anos entre frontend, backend, mobile e cloud — com foco crescente em engenharia assistida por IA.",
-      "focus": "destaque",
-      "latestOnGithub": "novidades no github"
+      "focus": "destaque"
     },
     "experience": {
       "eyebrow": "onde eu trabalhei",
@@ -44,7 +43,8 @@
     "projects": {
       "eyebrow": "o que eu construí",
       "title": "Projetos",
-      "description": "Trabalhos públicos selecionados. Projetos privados de clientes são exibidos sem link para o repositório."
+      "description": "Trabalhos públicos selecionados. Projetos privados de clientes são exibidos sem link para o repositório.",
+      "latestOnGithub": "novidades no github"
     },
     "certifications": {
       "eyebrow": "aprendizado contínuo",

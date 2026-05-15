@@ -1,18 +1,25 @@
 import { FileDown, Mail } from "lucide-react";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/composed/section";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Stack } from "@/components/layout";
 import { buttonVariants } from "@/components/ui/button";
-import { profile } from "@/content";
+import { getProfile } from "@/content";
+import type { Locale } from "@/i18n/routing";
 
 /** Contact section. A working contact form replaces the CTAs in Phase 6. */
-export function Contact() {
+export async function Contact() {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("sections.contact");
+  const tHero = await getTranslations("hero");
+  const profile = getProfile(locale);
+
   return (
     <Section
       id="contact"
-      eyebrow="get in touch"
-      title="Let's build something"
-      description="Have an engineering challenge, an architecture question or a collaboration in mind? The fastest way to reach me is email."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      description={t("description")}
     >
       <Stack gap="lg">
         <Cluster gap="sm">
@@ -21,7 +28,7 @@ export function Contact() {
             className={buttonVariants({ size: "lg" })}
           >
             <Mail aria-hidden />
-            Email me
+            {t("emailMe")}
           </a>
           <a
             href={profile.resumePdf}
@@ -30,7 +37,7 @@ export function Contact() {
             className={buttonVariants({ variant: "outline", size: "lg" })}
           >
             <FileDown aria-hidden />
-            Download CV
+            {tHero("downloadCv")}
           </a>
         </Cluster>
         <SocialLinks links={profile.socials} />

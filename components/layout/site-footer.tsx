@@ -1,10 +1,15 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Container, Stack } from "@/components/layout";
-import { profile } from "@/content";
+import { getProfile } from "@/content";
+import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 
 /** Site footer — identity, social links and build attribution. */
-export function SiteFooter() {
+export async function SiteFooter() {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("footer");
+  const profile = getProfile(locale);
   const year = new Date().getFullYear();
 
   return (
@@ -26,22 +31,22 @@ export function SiteFooter() {
             gap="sm"
           >
             <span>
-              © {year} {profile.name}. All rights reserved.
+              © {year} {profile.name}. {t("rights")}
             </span>
             <Cluster gap="md">
               <Link
                 href="/cv"
                 className="hover:text-foreground transition-colors"
               >
-                Print résumé
+                {t("printResume")}
               </Link>
               <Link
                 href="/design-system"
                 className="hover:text-foreground transition-colors"
               >
-                Design System
+                {t("designSystem")}
               </Link>
-              <span>Built with Next.js · Crafted with Claude + Cursor</span>
+              <span>{t("builtWith")}</span>
             </Cluster>
           </Cluster>
         </Stack>

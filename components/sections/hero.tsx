@@ -1,11 +1,16 @@
 import { ArrowDown, FileDown } from "lucide-react";
-import { Cluster, Container, Stack } from "@/components/layout";
+import { getLocale, getTranslations } from "next-intl/server";
 import { SocialLinks } from "@/components/composed/social-links";
+import { Cluster, Container, Stack } from "@/components/layout";
 import { buttonVariants } from "@/components/ui/button";
-import { profile } from "@/content";
+import { getProfile } from "@/content";
+import type { Locale } from "@/i18n/routing";
 
 /** Landing hero — name, headline and the professional summary. */
-export function Hero() {
+export async function Hero() {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("hero");
+  const profile = getProfile(locale);
   const [lead, ...rest] = profile.summary;
 
   return (
@@ -43,7 +48,7 @@ export function Hero() {
 
         <Cluster gap="sm">
           <a href="#contact" className={buttonVariants({ size: "lg" })}>
-            Get in touch
+            {t("getInTouch")}
             <ArrowDown aria-hidden />
           </a>
           <a
@@ -53,7 +58,7 @@ export function Hero() {
             className={buttonVariants({ variant: "outline", size: "lg" })}
           >
             <FileDown aria-hidden />
-            Download CV
+            {t("downloadCv")}
           </a>
         </Cluster>
 

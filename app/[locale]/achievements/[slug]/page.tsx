@@ -1,20 +1,21 @@
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Metric } from "@/components/composed/metric";
-import { Link } from "@/i18n/navigation";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Badge } from "@/components/ui/badge";
-import { achievements, getAchievementBySlug } from "@/content";
+import { achievementSlugs, getAchievementBySlug } from "@/content";
+import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 
 // Only the known achievement slugs are valid; anything else 404s.
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return achievements.map((achievement) => ({ slug: achievement.slug }));
+  return achievementSlugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
@@ -22,8 +23,8 @@ export async function generateMetadata({
 }: {
   params: Promise<{ locale: string; slug: string }>;
 }): Promise<Metadata> {
-  const { slug } = await params;
-  const achievement = getAchievementBySlug(slug);
+  const { locale, slug } = await params;
+  const achievement = getAchievementBySlug(locale as Locale, slug);
   if (!achievement) return {};
   return { title: achievement.title, description: achievement.summary };
 }
@@ -35,8 +36,10 @@ export default async function AchievementPage({
 }) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const achievement = getAchievementBySlug(slug);
+  const achievement = getAchievementBySlug(locale as Locale, slug);
   if (!achievement) notFound();
+
+  const t = await getTranslations("achievement");
 
   return (
     <>
@@ -50,7 +53,7 @@ export default async function AchievementPage({
                 className="text-muted-foreground hover:text-brand inline-flex items-center gap-1.5 text-sm transition-colors"
               >
                 <ArrowLeft aria-hidden className="size-4" />
-                All achievements
+                {t("back")}
               </Link>
               <Stack gap="sm">
                 <span className="text-brand font-mono text-sm">
@@ -77,17 +80,17 @@ export default async function AchievementPage({
             ) : null}
 
             <Stack as="section" gap="sm">
-              <h2 className="text-xl font-semibold">Overview</h2>
+              <h2 className="text-xl font-semibold">{t("overview")}</h2>
               <p className="text-muted-foreground">{achievement.summary}</p>
             </Stack>
 
             <Stack as="section" gap="sm">
-              <h2 className="text-xl font-semibold">Impact</h2>
+              <h2 className="text-xl font-semibold">{t("impact")}</h2>
               <p className="text-muted-foreground">{achievement.impact}</p>
             </Stack>
 
             <Stack as="section" gap="sm">
-              <h2 className="text-xl font-semibold">Tech</h2>
+              <h2 className="text-xl font-semibold">{t("tech")}</h2>
               <Cluster as="ul" gap="xs">
                 {achievement.tech.map((item) => (
                   <li key={item}>

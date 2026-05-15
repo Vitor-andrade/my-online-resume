@@ -4,7 +4,12 @@ import type { SkillCategory as SkillCategoryData } from "@/content";
 import { cn } from "@/lib/utils";
 
 /** Card listing one skill category as a set of badges. */
-export function SkillCategory({ name, skills, featured }: SkillCategoryData) {
+export function SkillCategory({
+  name,
+  skills,
+  featured,
+  focusLabel,
+}: SkillCategoryData & { focusLabel: string }) {
   return (
     <Stack
       gap="sm"
@@ -20,7 +25,7 @@ export function SkillCategory({ name, skills, featured }: SkillCategoryData) {
             variant="outline"
             className="border-brand/40 text-brand font-mono"
           >
-            focus
+            {focusLabel}
           </Badge>
         ) : null}
       </Cluster>

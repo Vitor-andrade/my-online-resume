@@ -1,16 +1,22 @@
-import { Section } from "@/components/composed/section";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ExperienceCard } from "@/components/composed/experience-card";
+import { Section } from "@/components/composed/section";
 import { Stack } from "@/components/layout";
-import { experience } from "@/content";
+import { getExperience } from "@/content";
+import type { Locale } from "@/i18n/routing";
 
 /** Work-experience section. */
-export function Experience() {
+export async function Experience() {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("sections.experience");
+  const experience = getExperience(locale);
+
   return (
     <Section
       id="experience"
-      eyebrow="where i've worked"
-      title="Work Experience"
-      description="Senior roles building and scaling production web and mobile platforms."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      description={t("description")}
     >
       <Stack gap="md">
         {experience.map((entry) => (

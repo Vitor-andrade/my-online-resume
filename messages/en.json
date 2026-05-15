@@ -23,8 +23,7 @@
       "eyebrow": "what i work with",
       "title": "Skills & Tech Stack",
       "description": "Six-plus years across frontend, backend, mobile and cloud — with a growing focus on AI-assisted engineering.",
-      "focus": "focus",
-      "latestOnGithub": "latest on github"
+      "focus": "focus"
     },
     "experience": {
       "eyebrow": "where i've worked",
@@ -44,7 +43,8 @@
     "projects": {
       "eyebrow": "things i've built",
       "title": "Projects",
-      "description": "Selected public work. Private client projects are shown without a repository link."
+      "description": "Selected public work. Private client projects are shown without a repository link.",
+      "latestOnGithub": "latest on github"
     },
     "certifications": {
       "eyebrow": "continued learning",

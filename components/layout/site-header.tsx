@@ -1,21 +1,32 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Cluster, Container } from "@/components/layout";
 import { MobileNav } from "@/components/layout/mobile-nav";
+import { LanguageSwitch } from "@/components/language-switch";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { profile } from "@/content";
+import { getProfile } from "@/content";
+import type { Locale } from "@/i18n/routing";
 import { Link } from "@/i18n/navigation";
 
-// Anchors are absolute (/#id) so the header works from any route,
-// not only the landing page.
-export const NAV_ITEMS = [
-  { href: "/#skills", label: "Skills" },
-  { href: "/#experience", label: "Experience" },
-  { href: "/#achievements", label: "Achievements" },
-  { href: "/#projects", label: "Projects" },
-  { href: "/#contact", label: "Contact" },
-];
+// Each key is both the section anchor id and the nav translation key.
+const NAV_KEYS = [
+  "skills",
+  "experience",
+  "achievements",
+  "projects",
+  "contact",
+] as const;
 
-/** Sticky site header — brand, anchor navigation and theme toggle. */
-export function SiteHeader() {
+/** Sticky site header — brand, anchor navigation, language and theme. */
+export async function SiteHeader() {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("nav");
+  const profile = getProfile(locale);
+
+  const navItems = NAV_KEYS.map((key) => ({
+    href: `/#${key}`,
+    label: t(key),
+  }));
+
   return (
     <header className="border-border/60 bg-background/80 sticky top-0 z-40 border-b backdrop-blur">
       <Container size="lg" className="py-3">
@@ -27,7 +38,7 @@ export function SiteHeader() {
           <Cluster gap="lg" className="hidden md:flex">
             <nav>
               <Cluster as="ul" gap="lg">
-                {NAV_ITEMS.map((item) => (
+                {navItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
@@ -39,12 +50,16 @@ export function SiteHeader() {
                 ))}
               </Cluster>
             </nav>
-            <ThemeToggle />
+            <Cluster gap="xs">
+              <LanguageSwitch />
+              <ThemeToggle />
+            </Cluster>
           </Cluster>
 
           <Cluster gap="xs" className="md:hidden">
+            <LanguageSwitch />
             <ThemeToggle />
-            <MobileNav items={NAV_ITEMS} />
+            <MobileNav items={navItems} />
           </Cluster>
         </Cluster>
       </Container>

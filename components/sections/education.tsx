@@ -1,16 +1,22 @@
+import { getLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/composed/section";
 import { Cluster, Stack } from "@/components/layout";
-import { education } from "@/content";
+import { getEducation } from "@/content";
+import type { Locale } from "@/i18n/routing";
 import { formatDateRange } from "@/lib/format";
 
 /** Education section. */
-export function Education() {
+export async function Education() {
+  const locale = (await getLocale()) as Locale;
+  const t = await getTranslations("sections.education");
+  const education = getEducation(locale);
+
   return (
     <Section
       id="education"
-      eyebrow="how i got here"
-      title="Education"
-      description="Formal background in computer engineering and cybersecurity."
+      eyebrow={t("eyebrow")}
+      title={t("title")}
+      description={t("description")}
     >
       <Stack gap="md">
         {education.map((entry) => (

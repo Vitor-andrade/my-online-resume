@@ -1,23 +1,33 @@
 import { ArrowLeft } from "lucide-react";
 import type { Metadata } from "next";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { PrintButton } from "@/components/composed/print-button";
 import { Cluster, Container, Stack } from "@/components/layout";
-import { Link } from "@/i18n/navigation";
 import {
-  achievements,
   certifications,
-  education,
-  experience,
-  profile,
-  skills,
+  getAchievements,
+  getEducation,
+  getExperience,
+  getProfile,
+  getSkills,
 } from "@/content";
+import { Link } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { formatDateRange } from "@/lib/format";
 
-export const metadata: Metadata = {
-  title: "Résumé",
-  description: `Printable résumé of ${profile.name}, ${profile.role}.`,
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const profile = getProfile(locale as Locale);
+  const t = await getTranslations({ locale, namespace: "cv" });
+  return {
+    title: t("title"),
+    description: `${profile.name} — ${profile.role}.`,
+  };
+}
 
 function DocSection({
   title,
@@ -44,6 +54,13 @@ export default async function CvPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations("cv");
+  const profile = getProfile(locale as Locale);
+  const experience = getExperience(locale as Locale);
+  const achievements = getAchievements(locale as Locale);
+  const skills = getSkills(locale as Locale);
+  const education = getEducation(locale as Locale);
+
   return (
     <main className="flex-1">
       <Container size="md" className="py-10 print:py-0">
@@ -54,7 +71,7 @@ export default async function CvPage({
               className="text-muted-foreground hover:text-brand inline-flex items-center gap-1.5 text-sm transition-colors"
             >
               <ArrowLeft aria-hidden className="size-4" />
-              Back to site
+              {t("backToSite")}
             </Link>
             <PrintButton />
           </Cluster>
@@ -76,7 +93,7 @@ export default async function CvPage({
               </p>
             </Stack>
 
-            <DocSection title="Summary">
+            <DocSection title={t("summary")}>
               <Stack gap="xs">
                 {profile.summary.map((paragraph) => (
                   <p key={paragraph} className="text-muted-foreground text-sm">
@@ -86,7 +103,7 @@ export default async function CvPage({
               </Stack>
             </DocSection>
 
-            <DocSection title="Experience">
+            <DocSection title={t("experience")}>
               <Stack gap="md">
                 {experience.map((entry) => (
                   <Stack key={`${entry.company}-${entry.start}`} gap="xs">
@@ -117,7 +134,7 @@ export default async function CvPage({
               </Stack>
             </DocSection>
 
-            <DocSection title="Key Achievements">
+            <DocSection title={t("achievements")}>
               <Stack gap="sm">
                 {achievements.map((achievement) => (
                   <Stack key={achievement.slug} gap="xs">
@@ -135,7 +152,7 @@ export default async function CvPage({
               </Stack>
             </DocSection>
 
-            <DocSection title="Skills">
+            <DocSection title={t("skills")}>
               <Stack gap="xs">
                 {skills.map((category) => (
                   <p key={category.name} className="text-sm">
@@ -148,7 +165,7 @@ export default async function CvPage({
               </Stack>
             </DocSection>
 
-            <DocSection title="Education">
+            <DocSection title={t("education")}>
               <Stack gap="sm">
                 {education.map((entry) => (
                   <Cluster
@@ -174,7 +191,7 @@ export default async function CvPage({
               </Stack>
             </DocSection>
 
-            <DocSection title="Certifications">
+            <DocSection title={t("certifications")}>
               <Stack as="ul" gap="xs">
                 {certifications.map((cert) => (
                   <li key={cert.name} className="text-muted-foreground text-sm">
@@ -184,7 +201,7 @@ export default async function CvPage({
               </Stack>
             </DocSection>
 
-            <DocSection title="Languages">
+            <DocSection title={t("languages")}>
               <p className="text-muted-foreground text-sm">
                 {profile.languages
                   .map((language) => `${language.name} (${language.level})`)
