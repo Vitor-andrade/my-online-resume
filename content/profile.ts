@@ -26,6 +26,11 @@ export const profile = profileSchema.parse({
       url: "https://github.com/Vitor-andrade",
     },
     {
+      platform: "gitlab",
+      label: "GitLab",
+      url: "https://gitlab.com/Vitor-andrade",
+    },
+    {
       platform: "email",
       label: "Email",
       url: "mailto:vitor.andradecavalcante@gmail.com",
