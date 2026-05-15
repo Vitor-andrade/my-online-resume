@@ -12,7 +12,7 @@ export function Contact() {
       id="contact"
       eyebrow="get in touch"
       title="Let's build something"
-      description="Open to senior engineering roles in the US, Canada and Europe. The fastest way to reach me is email."
+      description="Have an engineering challenge, an architecture question or a collaboration in mind? The fastest way to reach me is email."
     >
       <Stack gap="lg">
         <Cluster gap="sm">
