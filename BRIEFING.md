@@ -2,7 +2,7 @@
 
 > **Propósito deste documento:** servir como single source of truth de tudo o que foi alinhado na fase de discovery. Se uma sessão de trabalho for perdida, este arquivo permite retomar de onde paramos sem reiniciar a conversa. Atualizar conforme decisões evoluírem.
 >
-> **Status:** Fase 4 (Rotas dedicadas) concluída · Próximo: Fase 5 (i18n).
+> **Status:** Fase 5 (i18n) concluída · Próximo: Fase 6 (Form de contato & extras).
 > **Última atualização:** 2026-05-15.
 
 ---
@@ -344,6 +344,7 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 | 2026-05-15 | Fase 2 concluída — schemas Zod + content files com dados reais do CV                         | Conteúdo tipado e auto-validado; CV PDF em `public/`; conteúdo English-only por ora                                                                             |
 | 2026-05-15 | Fase 3 concluída — landing page com 8 seções, header/footer, composed components             | `lucide-react` removeu ícones de marca → `@icons-pack/react-simple-icons` + LinkedIn inline; AchievementCard linka p/ `/achievements/[slug]` (criado na Fase 4) |
 | 2026-05-15 | Fase 4 concluída — `/achievements/[slug]` (SSG), `/cv` (print), GitHub API na seção Projects | GitHub via REST sem token (custo zero); `/` agora é ISR (revalidate 1h)                                                                                         |
+| 2026-05-15 | Fase 5 concluída — i18n next-intl (EN + pt-BR), conteúdo bilíngue, seletor de idioma         | Rotas sob `app/[locale]/`; conteúdo locale-keyed (slugs/tech invariantes); design-system fica só em EN                                                          |
 
 ---
 
