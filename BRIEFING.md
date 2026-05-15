@@ -2,7 +2,7 @@
 
 > **Propósito deste documento:** servir como single source of truth de tudo o que foi alinhado na fase de discovery. Se uma sessão de trabalho for perdida, este arquivo permite retomar de onde paramos sem reiniciar a conversa. Atualizar conforme decisões evoluírem.
 >
-> **Status:** Fase 6 (Form de contato & extras) concluída · Próximo: Fase 7 (Quality gates).
+> **Status:** Fase 7 (Quality gates) concluída · Próximo: Fase 8 (Polish & lançamento).
 > **Última atualização:** 2026-05-15.
 
 ---
@@ -347,6 +347,7 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 | 2026-05-15 | Fase 4 concluída — `/achievements/[slug]` (SSG), `/cv` (print), GitHub API na seção Projects | GitHub via REST sem token (custo zero); `/` agora é ISR (revalidate 1h)                                                                                         |
 | 2026-05-15 | Fase 5 concluída — i18n next-intl (EN + pt-BR), conteúdo bilíngue, seletor de idioma         | Rotas sob `app/[locale]/`; conteúdo locale-keyed (slugs/tech invariantes); design-system fica só em EN                                                          |
 | 2026-05-15 | Fase 6 concluída — OG image dinâmica, form de contato (Resend + Turnstile), PostHog          | env via Zod (chaves opcionais, degradação graciosa); Sentry adiado para TODO                                                                                    |
+| 2026-05-15 | Fase 7 concluída — Vitest, Playwright E2E + axe, Lighthouse CI, jobs no CI                   | E2E em porta dedicada (3100); a11y como gate hard; performance como warn                                                                                        |
 
 ---
 
