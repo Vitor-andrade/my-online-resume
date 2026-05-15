@@ -2,7 +2,7 @@
 
 > **Propósito deste documento:** servir como single source of truth de tudo o que foi alinhado na fase de discovery. Se uma sessão de trabalho for perdida, este arquivo permite retomar de onde paramos sem reiniciar a conversa. Atualizar conforme decisões evoluírem.
 >
-> **Status:** Fase 1 (Design System) concluída · Próximo: Fase 2 (Schemas & Conteúdo).
+> **Status:** Fase 2 (Schemas & Conteúdo) concluída · Próximo: Fase 3 (Landing page).
 > **Última atualização:** 2026-05-15.
 
 ---
@@ -242,6 +242,7 @@ A11y embutido: focus rings tokenizados, contraste AA validado por axe no CI, `pr
 | **Storybook + Chromatic**                     | TODO documentado | Overkill para o tamanho do projeto; `/design-system` cobre showcase |
 | **Domínio próprio** (`.dev`)                  | TODO futuro      | Sem orçamento agora; subdomínio Vercel atende                       |
 | **Idiomas `es` e `fr`**                       | Estrutura pronta | Adicionar arquivo JSON quando necessário                            |
+| **URL do GitLab**                             | Aguardando user  | Contact pede LinkedIn/Gmail/GitHub/GitLab; falta a URL do GitLab    |
 
 ---
 
@@ -340,6 +341,7 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 | 2026-05-15 | Gerenciador de pacotes: pnpm                                                  | Mais rápido/disk-efficient; padrão moderno                                               |
 | 2026-05-15 | Fase 0 concluída — scaffold, tooling, CI, shadcn                              | Bootstrap completo; typecheck/lint/build verdes                                          |
 | 2026-05-15 | Fase 1 concluída — token layers, layout primitives, theming, `/design-system` | Design System base pronto; rota `/design-system` no root (migra p/ `[locale]` na Fase 5) |
+| 2026-05-15 | Fase 2 concluída — schemas Zod + content files com dados reais do CV          | Conteúdo tipado e auto-validado; CV PDF em `public/`; conteúdo English-only por ora      |
 
 ---
 
