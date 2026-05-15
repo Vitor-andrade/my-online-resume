@@ -2,7 +2,7 @@
 
 > **Propósito deste documento:** servir como single source of truth de tudo o que foi alinhado na fase de discovery. Se uma sessão de trabalho for perdida, este arquivo permite retomar de onde paramos sem reiniciar a conversa. Atualizar conforme decisões evoluírem.
 >
-> **Status:** Fase 5 (i18n) concluída · Próximo: Fase 6 (Form de contato & extras).
+> **Status:** Fase 6 (Form de contato & extras) concluída · Próximo: Fase 7 (Quality gates).
 > **Última atualização:** 2026-05-15.
 
 ---
@@ -236,13 +236,14 @@ A11y embutido: focus rings tokenizados, contraste AA validado por axe no CI, `pr
 
 ## 7. Decisões pendentes / TODOs deferidos
 
-| Item                                          | Status           | Razão de adiamento                                                  |
-| --------------------------------------------- | ---------------- | ------------------------------------------------------------------- |
-| **AI Assistant chatbot** no site (Claude API) | TODO arquitetado | Consome créditos pagos; arquitetura prepara plug-in futuro          |
-| **Storybook + Chromatic**                     | TODO documentado | Overkill para o tamanho do projeto; `/design-system` cobre showcase |
-| **Domínio próprio** (`.dev`)                  | TODO futuro      | Sem orçamento agora; subdomínio Vercel atende                       |
-| **Idiomas `es` e `fr`**                       | Estrutura pronta | Adicionar arquivo JSON quando necessário                            |
-| **URL do GitLab**                             | Aguardando user  | Contact pede LinkedIn/Gmail/GitHub/GitLab; falta a URL do GitLab    |
+| Item                                          | Status           | Razão de adiamento                                                                                                                             |
+| --------------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| **AI Assistant chatbot** no site (Claude API) | TODO arquitetado | Consome créditos pagos; arquitetura prepara plug-in futuro                                                                                     |
+| **Storybook + Chromatic**                     | TODO documentado | Overkill para o tamanho do projeto; `/design-system` cobre showcase                                                                            |
+| **Domínio próprio** (`.dev`)                  | TODO futuro      | Sem orçamento agora; subdomínio Vercel atende                                                                                                  |
+| **Idiomas `es` e `fr`**                       | Estrutura pronta | Adicionar arquivo JSON quando necessário                                                                                                       |
+| **URL do GitLab**                             | Resolvido        | URL adicionada em `content/profile.ts`                                                                                                         |
+| **Sentry (error tracking)**                   | TODO adiado      | Setup do `withSentryConfig` + instrumentação tem fricção; PostHog já cobre analytics. Adicionar se o usuário quiser tracking de erros dedicado |
 
 ---
 
@@ -345,6 +346,7 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 | 2026-05-15 | Fase 3 concluída — landing page com 8 seções, header/footer, composed components             | `lucide-react` removeu ícones de marca → `@icons-pack/react-simple-icons` + LinkedIn inline; AchievementCard linka p/ `/achievements/[slug]` (criado na Fase 4) |
 | 2026-05-15 | Fase 4 concluída — `/achievements/[slug]` (SSG), `/cv` (print), GitHub API na seção Projects | GitHub via REST sem token (custo zero); `/` agora é ISR (revalidate 1h)                                                                                         |
 | 2026-05-15 | Fase 5 concluída — i18n next-intl (EN + pt-BR), conteúdo bilíngue, seletor de idioma         | Rotas sob `app/[locale]/`; conteúdo locale-keyed (slugs/tech invariantes); design-system fica só em EN                                                          |
+| 2026-05-15 | Fase 6 concluída — OG image dinâmica, form de contato (Resend + Turnstile), PostHog          | env via Zod (chaves opcionais, degradação graciosa); Sentry adiado para TODO                                                                                    |
 
 ---
 
