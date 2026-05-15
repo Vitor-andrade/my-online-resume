@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { profile } from "@/content";
@@ -28,12 +29,12 @@ export function SiteFooter() {
               © {year} {profile.name}. All rights reserved.
             </span>
             <Cluster gap="md">
-              <a
+              <Link
                 href="/design-system"
                 className="hover:text-foreground transition-colors"
               >
                 Design System
-              </a>
+              </Link>
               <span>Built with Next.js · Crafted with Claude + Cursor</span>
             </Cluster>
           </Cluster>

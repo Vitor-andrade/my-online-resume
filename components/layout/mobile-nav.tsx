@@ -1,6 +1,7 @@
 "use client";
 
 import { Menu } from "lucide-react";
+import Link from "next/link";
 import { Stack } from "@/components/layout";
 import { Button } from "@/components/ui/button";
 import {
@@ -34,7 +35,7 @@ export function MobileNav({ items }: { items: NavItem[] }) {
           {items.map((item) => (
             <SheetClose
               key={item.href}
-              render={<a href={item.href} />}
+              render={<Link href={item.href} />}
               className="hover:text-brand rounded-md py-2 text-base transition-colors"
             >
               {item.label}

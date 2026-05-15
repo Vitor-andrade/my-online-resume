@@ -49,3 +49,8 @@ export const achievements = [
     tech: ["Python", "Django", "Agile", "Jira"],
   },
 ].map((entry) => achievementSchema.parse(entry));
+
+/** Looks up an achievement by its slug, or undefined when none matches. */
+export function getAchievementBySlug(slug: string) {
+  return achievements.find((achievement) => achievement.slug === slug);
+}
