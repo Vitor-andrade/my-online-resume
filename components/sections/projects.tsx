@@ -1,10 +1,16 @@
 import { Section } from "@/components/composed/section";
 import { ProjectCard } from "@/components/composed/project-card";
-import { Grid } from "@/components/layout";
+import { Grid, Stack } from "@/components/layout";
 import { projects } from "@/content";
+import { getTopRepositories } from "@/lib/github";
 
-/** Featured projects section. */
-export function Projects() {
+/**
+ * Featured projects section. Curated entries are augmented with the
+ * user's top public GitHub repositories, fetched server-side with ISR.
+ */
+export async function Projects() {
+  const repos = await getTopRepositories(4);
+
   return (
     <Section
       id="projects"
@@ -17,6 +23,19 @@ export function Projects() {
           <ProjectCard key={project.name} {...project} />
         ))}
       </Grid>
+
+      {repos.length > 0 ? (
+        <Stack gap="md">
+          <h3 className="text-muted-foreground font-mono text-sm">
+            latest on github
+          </h3>
+          <Grid columns={2} gap="md">
+            {repos.map((repo) => (
+              <ProjectCard key={repo.name} {...repo} />
+            ))}
+          </Grid>
+        </Stack>
+      ) : null}
     </Section>
   );
 }
