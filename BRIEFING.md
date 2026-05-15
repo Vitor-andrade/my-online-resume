@@ -2,7 +2,7 @@
 
 > **Propósito deste documento:** servir como single source of truth de tudo o que foi alinhado na fase de discovery. Se uma sessão de trabalho for perdida, este arquivo permite retomar de onde paramos sem reiniciar a conversa. Atualizar conforme decisões evoluírem.
 >
-> **Status:** Discovery concluído · Pronto para iniciar implementação.
+> **Status:** Fase 0 (Bootstrap) concluída · Próximo: Fase 1 (Design System).
 > **Última atualização:** 2026-05-15.
 
 ---
@@ -337,6 +337,8 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 | 2026-05-15 | Design System em 5 camadas (tokens → showcase)         | Diferencial para vagas internacionais                                        |
 | 2026-05-15 | Criados CLAUDE.md, AGENTS.md, README.md                | Regras de IA + apresentação pública do projeto                               |
 | 2026-05-15 | Stack Next.js 15 → Next.js 16 / React 19.2             | Alinhar com arquivos em `instructions/`; `params`/`searchParams` agora async |
+| 2026-05-15 | Gerenciador de pacotes: pnpm                           | Mais rápido/disk-efficient; padrão moderno                                   |
+| 2026-05-15 | Fase 0 concluída — scaffold, tooling, CI, shadcn       | Bootstrap completo; typecheck/lint/build verdes                              |
 
 ---
 
