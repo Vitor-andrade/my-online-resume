@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
+import { Reveal } from "@/components/reveal";
 import { Achievements } from "@/components/sections/achievements";
 import { Certifications } from "@/components/sections/certifications";
 import { Contact } from "@/components/sections/contact";
@@ -23,13 +24,27 @@ export default async function HomePage({
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <Skills />
-        <Experience />
-        <Education />
-        <Achievements />
-        <Projects />
-        <Certifications />
-        <Contact />
+        <Reveal>
+          <Skills />
+        </Reveal>
+        <Reveal>
+          <Experience />
+        </Reveal>
+        <Reveal>
+          <Education />
+        </Reveal>
+        <Reveal>
+          <Achievements />
+        </Reveal>
+        <Reveal>
+          <Projects />
+        </Reveal>
+        <Reveal>
+          <Certifications />
+        </Reveal>
+        <Reveal>
+          <Contact />
+        </Reveal>
       </main>
       <SiteFooter />
     </>
