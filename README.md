@@ -20,7 +20,7 @@ The content structure is inspired by the [developerFolio](https://github.com/dev
 **Audience:** recruiters and engineering teams in the US, Canada and Europe. The product's primary language is English, with Brazilian Portuguese as a second locale and the translation layer structured to add Spanish and French later.
 
 > [!NOTE]
-> The project is in the implementation-planning stage. Product scope, decisions and the phased build plan live in [`BRIEFING.md`](./BRIEFING.md). AI operating rules live in [`CLAUDE.md`](./CLAUDE.md) and [`AGENTS.md`](./AGENTS.md).
+> Product scope, decisions and the build history live in [`BRIEFING.md`](./BRIEFING.md). AI operating rules live in [`CLAUDE.md`](./CLAUDE.md) and [`AGENTS.md`](./AGENTS.md).
 
 ## What the site includes
 
@@ -108,34 +108,35 @@ GitHub data (repositories, stats) is fetched in React Server Components with inc
 
 ## Getting started
 
-> [!NOTE]
-> Scaffolding lands in Phase 0 of the build plan; the commands below describe the project once it is initialized.
+This project uses **pnpm**.
 
 ```bash
-npm install        # install dependencies
-npm run dev        # start the dev server (Turbopack)
-npm run build      # production build — also validates content via Zod
-npm run lint       # ESLint
-npm run typecheck  # tsc --noEmit
-npm run test       # Vitest unit/component tests
-npm run test:e2e   # Playwright end-to-end tests
+pnpm install       # install dependencies
+pnpm dev           # start the dev server (Turbopack)
+pnpm build         # production build — also validates content via Zod
+pnpm lint          # ESLint
+pnpm typecheck     # tsc --noEmit
+pnpm test          # Vitest unit/component tests
+pnpm test:e2e      # Playwright end-to-end tests
 ```
 
-## Roadmap
+Optional service keys (contact form, analytics) are documented in [`env.example`](./env.example); the site builds and runs without them.
 
-Phased build plan (full detail in [`BRIEFING.md`](./BRIEFING.md) §10):
+## Build history
 
-- **Phase 0** — Bootstrap (Next.js, TypeScript, Tailwind, shadcn, tooling, CI)
-- **Phase 1** — Design system (tokens, layout primitives, `/design-system` page)
-- **Phase 2** — Zod schemas & typed content
-- **Phase 3** — Landing page
-- **Phase 4** — Dedicated routes & GitHub integration
-- **Phase 5** — Internationalization
-- **Phase 6** — Contact form, analytics, dynamic OG
-- **Phase 7** — Quality gates (tests, performance)
-- **Phase 8** — Polish & launch
+The site was built in eight phases (full detail in [`BRIEFING.md`](./BRIEFING.md) §10):
 
-**Deferred (TODO):** in-site AI assistant chatbot · Storybook + Chromatic · custom domain · Spanish & French locales.
+- ✅ **Phase 0** — Bootstrap (Next.js, TypeScript, Tailwind, shadcn, tooling, CI)
+- ✅ **Phase 1** — Design system (tokens, layout primitives, `/design-system` page)
+- ✅ **Phase 2** — Zod schemas & typed content
+- ✅ **Phase 3** — Landing page
+- ✅ **Phase 4** — Dedicated routes & GitHub integration
+- ✅ **Phase 5** — Internationalization (EN + PT-BR)
+- ✅ **Phase 6** — Contact form, analytics, dynamic OG
+- ✅ **Phase 7** — Quality gates (Vitest, Playwright, axe, Lighthouse CI)
+- ✅ **Phase 8** — Polish & launch (animations, SEO, deploy)
+
+**Deferred (TODO):** in-site AI assistant chatbot · Storybook + Chromatic · custom domain · Spanish & French locales · dedicated error tracking (Sentry).
 
 ## Contact
 
