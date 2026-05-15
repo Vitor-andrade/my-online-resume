@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
+import { PostHogProvider } from "@/components/posthog-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { clientEnv } from "@/lib/env";
 import { routing } from "@/i18n/routing";
@@ -63,7 +64,9 @@ export default async function LocaleLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          <PostHogProvider>
+            <NextIntlClientProvider>{children}</NextIntlClientProvider>
+          </PostHogProvider>
         </ThemeProvider>
       </body>
     </html>
