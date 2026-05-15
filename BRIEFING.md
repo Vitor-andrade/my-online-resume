@@ -31,14 +31,14 @@ Construir um **currículo profissional online** para um Senior Fullstack Enginee
 
 ### Stack profissional declarada
 
-| Camada | Tecnologias |
-|---|---|
+| Camada          | Tecnologias                                                                                                                  |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------- |
 | Frontend/Mobile | React, **Next.js**, React Native (Expo), TypeScript, Tailwind, **shadcn/ui**, **TanStack Query**, **Zustand**, **Zod**, i18n |
-| Backend | **Node.js**, **NestJS**, Python (Django), Go, REST, WebSockets, Drizzle ORM, JWT/OAuth, Swagger |
-| Bancos | **PostgreSQL**, Redis, MongoDB, MySQL |
-| Cloud/DevOps | **AWS** (Lambda, EC2, RDS, S3, CloudWatch, Route53, CloudFront), Docker, Terraform, GitHub Actions, GitLab CI, Doppler |
-| DevSecOps | OWASP Top 10, SAST/SCA/DAST, Fortify, Veracode, SonarQube |
-| Práticas | Clean Architecture, SOLID, DDD, Microsserviços, Agile/Scrum |
+| Backend         | **Node.js**, **NestJS**, Python (Django), Go, REST, WebSockets, Drizzle ORM, JWT/OAuth, Swagger                              |
+| Bancos          | **PostgreSQL**, Redis, MongoDB, MySQL                                                                                        |
+| Cloud/DevOps    | **AWS** (Lambda, EC2, RDS, S3, CloudWatch, Route53, CloudFront), Docker, Terraform, GitHub Actions, GitLab CI, Doppler       |
+| DevSecOps       | OWASP Top 10, SAST/SCA/DAST, Fortify, Veracode, SonarQube                                                                    |
+| Práticas        | Clean Architecture, SOLID, DDD, Microsserviços, Agile/Scrum                                                                  |
 
 ### Cases de impacto (vão para o CV online)
 
@@ -51,12 +51,12 @@ Construir um **currículo profissional online** para um Senior Fullstack Enginee
 
 ### Empregos relevantes
 
-| Empresa | Período | Função |
-|---|---|---|
+| Empresa          | Período             | Função                    |
+| ---------------- | ------------------- | ------------------------- |
 | **Click Planos** | Jul 2025 → presente | Senior Fullstack Engineer |
-| **Evernow** | Set 2022 → presente | Senior DevSecOps Analyst |
-| **Fridom** | Jan 2020 → Jan 2025 | Senior Fullstack Engineer |
-| **Fest** | Nov 2023 → Nov 2024 | Fullstack Engineer |
+| **Evernow**      | Set 2022 → presente | Senior DevSecOps Analyst  |
+| **Fridom**       | Jan 2020 → Jan 2025 | Senior Fullstack Engineer |
+| **Fest**         | Nov 2023 → Nov 2024 | Fullstack Engineer        |
 
 ### Idiomas
 
@@ -131,16 +131,16 @@ Custo mensal      R$ 0  ✅
 
 ### Stack decidido vs alternativas descartadas
 
-| Decisão | Escolhido | Descartado | Razão |
-|---|---|---|---|
-| Framework | **Next.js 16** | React + Vite SPA | SSR/SEO, file routing, i18n nativo, OG dinâmica, ISR para GitHub data |
-| Framework | **Next.js 16** | Astro / Remix | Alinhar com stack profissional do Vitor (Next.js é seu nº 1) |
-| UI library | **shadcn/ui** | MUI | Bundle menor, estética moderna, controle total do código (não é lib) |
-| Conteúdo | **TS files + Zod** | MDX / CMS | Conteúdo estável e finito, usuário tech-savvy, validação no build |
-| Hospedagem | **Vercel Hobby** | AWS Amplify / GitHub Pages | Free tier mais robusto p/ Next, sem fricção, edge functions |
-| Anti-spam | **Cloudflare Turnstile** | reCAPTCHA | Privacy-friendly, free ilimitado |
-| Email | **Resend** | SendGrid / Mailgun | Free tier 3k/mês > suficiente |
-| Errors | **Sentry free** | LogRocket / Datadog | Free tier 5k errors/mês > suficiente |
+| Decisão    | Escolhido                | Descartado                 | Razão                                                                 |
+| ---------- | ------------------------ | -------------------------- | --------------------------------------------------------------------- |
+| Framework  | **Next.js 16**           | React + Vite SPA           | SSR/SEO, file routing, i18n nativo, OG dinâmica, ISR para GitHub data |
+| Framework  | **Next.js 16**           | Astro / Remix              | Alinhar com stack profissional do Vitor (Next.js é seu nº 1)          |
+| UI library | **shadcn/ui**            | MUI                        | Bundle menor, estética moderna, controle total do código (não é lib)  |
+| Conteúdo   | **TS files + Zod**       | MDX / CMS                  | Conteúdo estável e finito, usuário tech-savvy, validação no build     |
+| Hospedagem | **Vercel Hobby**         | AWS Amplify / GitHub Pages | Free tier mais robusto p/ Next, sem fricção, edge functions           |
+| Anti-spam  | **Cloudflare Turnstile** | reCAPTCHA                  | Privacy-friendly, free ilimitado                                      |
+| Email      | **Resend**               | SendGrid / Mailgun         | Free tier 3k/mês > suficiente                                         |
+| Errors     | **Sentry free**          | LogRocket / Datadog        | Free tier 5k errors/mês > suficiente                                  |
 
 ---
 
@@ -222,13 +222,13 @@ README.md                            # com badges, stack, "Built with Claude + C
 
 5 camadas a implementar:
 
-| Camada | Implementação |
-|---|---|
-| 1. Tokens | CSS custom properties em duas camadas (primitive → semantic) |
-| 2. Layout primitives | Stack, Cluster, Container, Grid (~50 linhas cada) |
-| 3. Component primitives | shadcn/ui (Radix + CVA + Tailwind) |
-| 4. Composition | ExperienceCard, AchievementCard, ProjectCard, Metric, Timeline, SectionHeader |
-| 5. Showcase | Página pública `/design-system` (auto-documentada a partir dos tokens) |
+| Camada                  | Implementação                                                                 |
+| ----------------------- | ----------------------------------------------------------------------------- |
+| 1. Tokens               | CSS custom properties em duas camadas (primitive → semantic)                  |
+| 2. Layout primitives    | Stack, Cluster, Container, Grid (~50 linhas cada)                             |
+| 3. Component primitives | shadcn/ui (Radix + CVA + Tailwind)                                            |
+| 4. Composition          | ExperienceCard, AchievementCard, ProjectCard, Metric, Timeline, SectionHeader |
+| 5. Showcase             | Página pública `/design-system` (auto-documentada a partir dos tokens)        |
 
 A11y embutido: focus rings tokenizados, contraste AA validado por axe no CI, `prefers-reduced-motion` respeitado, keyboard nav completa, ARIA correto.
 
@@ -236,22 +236,24 @@ A11y embutido: focus rings tokenizados, contraste AA validado por axe no CI, `pr
 
 ## 7. Decisões pendentes / TODOs deferidos
 
-| Item | Status | Razão de adiamento |
-|---|---|---|
-| **AI Assistant chatbot** no site (Claude API) | TODO arquitetado | Consome créditos pagos; arquitetura prepara plug-in futuro |
-| **Storybook + Chromatic** | TODO documentado | Overkill para o tamanho do projeto; `/design-system` cobre showcase |
-| **Domínio próprio** (`.dev`) | TODO futuro | Sem orçamento agora; subdomínio Vercel atende |
-| **Idiomas `es` e `fr`** | Estrutura pronta | Adicionar arquivo JSON quando necessário |
+| Item                                          | Status           | Razão de adiamento                                                  |
+| --------------------------------------------- | ---------------- | ------------------------------------------------------------------- |
+| **AI Assistant chatbot** no site (Claude API) | TODO arquitetado | Consome créditos pagos; arquitetura prepara plug-in futuro          |
+| **Storybook + Chromatic**                     | TODO documentado | Overkill para o tamanho do projeto; `/design-system` cobre showcase |
+| **Domínio próprio** (`.dev`)                  | TODO futuro      | Sem orçamento agora; subdomínio Vercel atende                       |
+| **Idiomas `es` e `fr`**                       | Estrutura pronta | Adicionar arquivo JSON quando necessário                            |
 
 ---
 
 ## 8. CI/CD — pipeline planejado
 
 ### Local (pre-commit)
+
 - **Husky + lint-staged**: Prettier + ESLint + `tsc --noEmit` nos arquivos staged.
 - **commitlint** — Conventional Commits obrigatório.
 
 ### Pull Request (GitHub Actions)
+
 - `lint` (ESLint flat config)
 - `typecheck` (`tsc --noEmit`)
 - `unit` (Vitest com coverage ≥ 80%)
@@ -264,25 +266,28 @@ A11y embutido: focus rings tokenizados, contraste AA validado por axe no CI, `pr
 - `CodeRabbit` (review automatizado free tier)
 
 ### Main branch
+
 - Tudo acima + production deploy (Vercel) + Sentry release tag + sitemap ping.
 
 ### Bot/automação
+
 - **Renovate** (ou Dependabot) — PRs automáticos de atualização de deps.
 
 ---
 
 ## 9. Testes — filosofia explícita
 
-| Camada | Ferramenta | Cobertura |
-|---|---|---|
-| Unit | Vitest + Testing Library | Utils, hooks, schemas Zod, geradores PDF |
-| Component | Testing Library | Render + a11y de cada componente UI |
-| E2E | Playwright | Form de contato, toggle tema, troca de idioma, navegação `/achievements/[slug]`, download PDF |
-| Performance | Lighthouse CI | LCP, CLS, performance score |
-| A11y | axe-core | WCAG 2.1 AA em todas as rotas |
-| Visual regression | (deferred — Chromatic) | TODO |
+| Camada            | Ferramenta               | Cobertura                                                                                     |
+| ----------------- | ------------------------ | --------------------------------------------------------------------------------------------- |
+| Unit              | Vitest + Testing Library | Utils, hooks, schemas Zod, geradores PDF                                                      |
+| Component         | Testing Library          | Render + a11y de cada componente UI                                                           |
+| E2E               | Playwright               | Form de contato, toggle tema, troca de idioma, navegação `/achievements/[slug]`, download PDF |
+| Performance       | Lighthouse CI            | LCP, CLS, performance score                                                                   |
+| A11y              | axe-core                 | WCAG 2.1 AA em todas as rotas                                                                 |
+| Visual regression | (deferred — Chromatic)   | TODO                                                                                          |
 
 **TDD onde faz sentido:**
+
 - ✅ Funções puras (PDF generator, formatadores, validadores Zod).
 - ⚖️ Test-after em componentes visuais.
 - ❌ Animações e layout Tailwind puro.
@@ -295,17 +300,17 @@ Filosofia documentada no `README.md` — material para entrevista técnica.
 
 A implementação será dividida em **8 fases atômicas** com critérios de aceite por fase:
 
-| Fase | Escopo |
-|---|---|
-| **Fase 0 — Bootstrap** | Next 16 + TS strict + Tailwind v4 + shadcn + ESLint/Prettier/Husky + CI base + repo público no GitHub |
-| **Fase 1 — Design System** | Tokens (primitive + semantic), Layout primitives, theme provider, página `/design-system` inicial |
-| **Fase 2 — Schemas & Conteúdo** | Zod schemas + content files (`profile`, `skills`, `experience`, `achievements`, `projects`, `education`, `certifications`) com dados reais do Vitor |
-| **Fase 3 — Landing single-page** | Hero → Skills (com destaque IA) → Experience → Education → Achievements → Projects → Certifications → Contact |
-| **Fase 4 — Rotas dedicadas** | `/achievements/[slug]` + `/cv` (print) + integração GitHub data (RSC + ISR) |
-| **Fase 5 — i18n** | next-intl, EN + pt-BR, switch no header, `hreflang` |
-| **Fase 6 — Form de contato + extras** | API route + Resend + Turnstile + Zod, PostHog, Sentry, OG dinâmica |
-| **Fase 7 — Quality gates** | Vitest suite, Playwright E2E, Lighthouse CI, axe, performance tuning |
-| **Fase 8 — Polish & lançamento** | Animações finais, SEO, sitemap, deploy Vercel, divulgação |
+| Fase                                  | Escopo                                                                                                                                              |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Fase 0 — Bootstrap**                | Next 16 + TS strict + Tailwind v4 + shadcn + ESLint/Prettier/Husky + CI base + repo público no GitHub                                               |
+| **Fase 1 — Design System**            | Tokens (primitive + semantic), Layout primitives, theme provider, página `/design-system` inicial                                                   |
+| **Fase 2 — Schemas & Conteúdo**       | Zod schemas + content files (`profile`, `skills`, `experience`, `achievements`, `projects`, `education`, `certifications`) com dados reais do Vitor |
+| **Fase 3 — Landing single-page**      | Hero → Skills (com destaque IA) → Experience → Education → Achievements → Projects → Certifications → Contact                                       |
+| **Fase 4 — Rotas dedicadas**          | `/achievements/[slug]` + `/cv` (print) + integração GitHub data (RSC + ISR)                                                                         |
+| **Fase 5 — i18n**                     | next-intl, EN + pt-BR, switch no header, `hreflang`                                                                                                 |
+| **Fase 6 — Form de contato + extras** | API route + Resend + Turnstile + Zod, PostHog, Sentry, OG dinâmica                                                                                  |
+| **Fase 7 — Quality gates**            | Vitest suite, Playwright E2E, Lighthouse CI, axe, performance tuning                                                                                |
+| **Fase 8 — Polish & lançamento**      | Animações finais, SEO, sitemap, deploy Vercel, divulgação                                                                                           |
 
 Cada fase com critérios de aceite e checkpoint para revisão.
 
@@ -313,25 +318,25 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 
 ## 11. Histórico de decisões importantes
 
-| Data | Decisão | Razão |
-|---|---|---|
-| 2026-05-13 | Documentar developerFolio como referência | Molde de conteúdo, não base de código |
-| 2026-05-13 | Next.js > React puro | SSR/SEO, alinhamento com stack do Vitor |
-| 2026-05-13 | shadcn/ui > MUI | Bundle, estética, controle de código |
-| 2026-05-13 | TS content files > MDX/CMS | Conteúdo estável, validação Zod no build |
-| 2026-05-13 | Vercel Hobby > AWS Amplify | DX e free tier mais robusto para Next.js |
-| 2026-05-14 | Single-page híbrido com `/achievements/[slug]` | Escaneabilidade + profundidade por case |
-| 2026-05-14 | EN principal, PT-BR secundário, estrutura pronta es/fr | Mercado-alvo USA/Canada/Europe |
-| 2026-05-14 | Página gera PDF (print CSS) + PDF estático separado | Atende uso casual + ATS |
-| 2026-05-14 | Animações em meio-termo (Linear/Resend) | Equilíbrio entre clean e expressivo |
-| 2026-05-14 | Manter identidade "GitHub-green dark" | Marca já estabelecida no README |
-| 2026-05-14 | AI Assistant → TODO arquitetado | Sem orçamento para API paga agora |
-| 2026-05-14 | PostHog free tier dentro | Experiência prévia + Click Planos |
-| 2026-05-14 | Subdomínio Vercel free | Sem custos |
-| 2026-05-15 | Storybook + Chromatic → TODO | Overkill; substituído por página `/design-system` |
-| 2026-05-15 | Design System em 5 camadas (tokens → showcase) | Diferencial para vagas internacionais |
-| 2026-05-15 | Criados CLAUDE.md, AGENTS.md, README.md | Regras de IA + apresentação pública do projeto |
-| 2026-05-15 | Stack Next.js 15 → Next.js 16 / React 19.2 | Alinhar com arquivos em `instructions/`; `params`/`searchParams` agora async |
+| Data       | Decisão                                                | Razão                                                                        |
+| ---------- | ------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| 2026-05-13 | Documentar developerFolio como referência              | Molde de conteúdo, não base de código                                        |
+| 2026-05-13 | Next.js > React puro                                   | SSR/SEO, alinhamento com stack do Vitor                                      |
+| 2026-05-13 | shadcn/ui > MUI                                        | Bundle, estética, controle de código                                         |
+| 2026-05-13 | TS content files > MDX/CMS                             | Conteúdo estável, validação Zod no build                                     |
+| 2026-05-13 | Vercel Hobby > AWS Amplify                             | DX e free tier mais robusto para Next.js                                     |
+| 2026-05-14 | Single-page híbrido com `/achievements/[slug]`         | Escaneabilidade + profundidade por case                                      |
+| 2026-05-14 | EN principal, PT-BR secundário, estrutura pronta es/fr | Mercado-alvo USA/Canada/Europe                                               |
+| 2026-05-14 | Página gera PDF (print CSS) + PDF estático separado    | Atende uso casual + ATS                                                      |
+| 2026-05-14 | Animações em meio-termo (Linear/Resend)                | Equilíbrio entre clean e expressivo                                          |
+| 2026-05-14 | Manter identidade "GitHub-green dark"                  | Marca já estabelecida no README                                              |
+| 2026-05-14 | AI Assistant → TODO arquitetado                        | Sem orçamento para API paga agora                                            |
+| 2026-05-14 | PostHog free tier dentro                               | Experiência prévia + Click Planos                                            |
+| 2026-05-14 | Subdomínio Vercel free                                 | Sem custos                                                                   |
+| 2026-05-15 | Storybook + Chromatic → TODO                           | Overkill; substituído por página `/design-system`                            |
+| 2026-05-15 | Design System em 5 camadas (tokens → showcase)         | Diferencial para vagas internacionais                                        |
+| 2026-05-15 | Criados CLAUDE.md, AGENTS.md, README.md                | Regras de IA + apresentação pública do projeto                               |
+| 2026-05-15 | Stack Next.js 15 → Next.js 16 / React 19.2             | Alinhar com arquivos em `instructions/`; `params`/`searchParams` agora async |
 
 ---
 
@@ -345,4 +350,4 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 
 ---
 
-*Este arquivo é o ponto de retomada em caso de perda de contexto. Quando uma decisão grande mudar, atualizar a seção 4 (stack), a seção 11 (histórico) e a seção 7 (TODOs).*
+_Este arquivo é o ponto de retomada em caso de perda de contexto. Quando uma decisão grande mudar, atualizar a seção 4 (stack), a seção 11 (histórico) e a seção 7 (TODOs)._

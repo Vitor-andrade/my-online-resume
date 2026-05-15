@@ -1,0 +1,13 @@
+.next/
+out/
+build/
+coverage/
+node_modules/
+pnpm-lock.yaml
+next-env.d.ts
+
+# Curated AI resource library and generated reference docs — kept verbatim
+agents/
+instructions/
+skills/
+developerFolio.md

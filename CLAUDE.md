@@ -25,23 +25,23 @@ An **online professional résumé** for **Vitor Cavalcante**, a Senior Fullstack
 
 ## 3. Tech stack (canonical)
 
-| Layer | Choice |
-|---|---|
-| Framework | Next.js 16 (App Router · React Server Components · Cache Components · Turbopack) |
-| UI runtime | React 19.2 |
-| Language | TypeScript (strict) + Zod (schema-first) |
-| Styling | Tailwind CSS v4 + `next-themes` |
-| Component primitives | shadcn/ui (Radix + CVA) |
-| Design system | CSS token layers + custom layout primitives + public `/design-system` page |
-| i18n | `next-intl` — `en` (default) + `pt-BR`, structured for `es` / `fr` |
-| Content | Typed `content/*.ts` files validated by Zod at build time |
-| Animation | Framer Motion + View Transitions API (honoring `prefers-reduced-motion`) |
-| Contact form | Resend + Cloudflare Turnstile + Zod (shared client/server schema) |
-| PDF | `window.print()` + `@media print` CSS; static PDF in `public/` |
-| Testing | Vitest + Testing Library + Playwright + Lighthouse CI + axe-core |
-| CI/CD | GitHub Actions + Husky + lint-staged + commitlint + Renovate + CodeRabbit |
-| Hosting | Vercel Hobby (free) |
-| Analytics / Errors | Vercel Analytics + PostHog (free tier) · Sentry (free tier) |
+| Layer                | Choice                                                                           |
+| -------------------- | -------------------------------------------------------------------------------- |
+| Framework            | Next.js 16 (App Router · React Server Components · Cache Components · Turbopack) |
+| UI runtime           | React 19.2                                                                       |
+| Language             | TypeScript (strict) + Zod (schema-first)                                         |
+| Styling              | Tailwind CSS v4 + `next-themes`                                                  |
+| Component primitives | shadcn/ui (Radix + CVA)                                                          |
+| Design system        | CSS token layers + custom layout primitives + public `/design-system` page       |
+| i18n                 | `next-intl` — `en` (default) + `pt-BR`, structured for `es` / `fr`               |
+| Content              | Typed `content/*.ts` files validated by Zod at build time                        |
+| Animation            | Framer Motion + View Transitions API (honoring `prefers-reduced-motion`)         |
+| Contact form         | Resend + Cloudflare Turnstile + Zod (shared client/server schema)                |
+| PDF                  | `window.print()` + `@media print` CSS; static PDF in `public/`                   |
+| Testing              | Vitest + Testing Library + Playwright + Lighthouse CI + axe-core                 |
+| CI/CD                | GitHub Actions + Husky + lint-staged + commitlint + Renovate + CodeRabbit        |
+| Hosting              | Vercel Hobby (free)                                                              |
+| Analytics / Errors   | Vercel Analytics + PostHog (free tier) · Sentry (free tier)                      |
 
 > **Versioning note:** the files in `instructions/` target Next.js 16.x and React 19.2. Follow them. A breaking change in Next 16 — `params` and `searchParams` are now async and must be `await`ed — applies throughout.
 
@@ -69,26 +69,27 @@ Use Next.js route groups, private folders (`_name`) and colocation. RSC by defau
 - **Components:** `PascalCase` files and exports. One component per file. Props interfaces named `<Component>Props`.
 - **Server vs client:** default to Server Components. A client component must justify its existence (interactivity, browser API, hooks). Never `next/dynamic` with `{ ssr: false }` inside a Server Component — extract a client component instead.
 - **Variants:** define component variants with CVA. Typos in variant props must fail typecheck.
-- **Design System tokens:** two layers — *primitive* tokens (`--gh-green-500`) are never used directly; *semantic* tokens (`--color-accent`, `--color-surface`) are what components consume. Theming = swapping the semantic layer.
+- **Design System tokens:** two layers — _primitive_ tokens (`--gh-green-500`) are never used directly; _semantic_ tokens (`--color-accent`, `--color-surface`) are what components consume. Theming = swapping the semantic layer.
 - **i18n:** every user-facing string lives in `messages/*.json` and is read via `next-intl`. No literals in JSX.
 - **Content:** edits to résumé data happen in `content/*.ts`, validated by the Zod schemas in `content/schema.ts`. A bad shape must fail `build`.
 - **Env vars:** accessed only through the typed/validated `lib/env.ts` (Zod). Never read `process.env` directly in components.
 - **Imports:** absolute imports via the `@/` alias.
-- **Comments:** write them only when the *why* is non-obvious. No narration of *what*.
+- **Comments:** write them only when the _why_ is non-obvious. No narration of _what_.
 
 ## 6. Commands
 
-> The project is pre-Phase 0 — `package.json` does not exist yet. These are the scripts to scaffold and then use.
+This project uses **pnpm**.
 
 ```bash
-npm run dev         # Next dev server (Turbopack)
-npm run build       # Production build — also runs Zod content validation
-npm run lint        # ESLint (flat config)
-npm run typecheck   # tsc --noEmit
-npm run test        # Vitest unit/component tests
-npm run test:e2e    # Playwright end-to-end
-npm run format      # Prettier
+pnpm dev           # Next dev server (Turbopack)
+pnpm build         # Production build
+pnpm lint          # ESLint (flat config)
+pnpm typecheck     # tsc --noEmit
+pnpm format        # Prettier — write
+pnpm format:check  # Prettier — check only
 ```
+
+Test scripts (`pnpm test`, `pnpm test:e2e`) are added in Phase 7.
 
 ## 7. Definition of Done (per change)
 
@@ -107,6 +108,7 @@ A change is complete only when **all** of the following hold:
 This repo ships a curated library of AI personas, procedural instructions and skills. **Use them — don't reinvent their guidance.**
 
 ### `instructions/` — procedural guidelines (always-on rules)
+
 - `nextjs.instructions.md` — Next.js 16 best practices. **Authoritative** for routing, caching, RSC boundaries.
 - `nextjs-tailwind.instructions.md` — Next.js + Tailwind + TypeScript patterns.
 - `github-actions-ci-cd-best-practices.instructions.md` — **Authoritative** for everything under `.github/workflows/`.
@@ -114,10 +116,12 @@ This repo ships a curated library of AI personas, procedural instructions and sk
 Treat these as binding standards whenever you touch the matching area.
 
 ### `skills/` — invokable operations
+
 Invoke the relevant skill instead of improvising. Most relevant to this project:
+
 - `create-implementation-plan` — before starting a phase, produce the plan.
 - `create-readme` — README generation/refresh.
-- `commit-message-storyteller` — write Conventional Commit messages that explain the *why*.
+- `commit-message-storyteller` — write Conventional Commit messages that explain the _why_.
 - `premium-frontend-ui` / `web-design-guidelines` / `web-design-reviewer` — UI craft and visual review.
 - `javascript-typescript-jest` — testing patterns.
 - `security-review` — security scan before each release.
@@ -126,6 +130,7 @@ Invoke the relevant skill instead of improvising. Most relevant to this project:
 - `acquire-codebase-knowledge` — onboarding/documentation.
 
 ### `agents/` — specialized personas
+
 See [`AGENTS.md`](./AGENTS.md) for the full roster and which agent to invoke for which task/phase.
 
 ## 9. Workflow expectations
