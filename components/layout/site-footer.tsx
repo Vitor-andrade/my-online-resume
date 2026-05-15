@@ -30,6 +30,12 @@ export function SiteFooter() {
             </span>
             <Cluster gap="md">
               <Link
+                href="/cv"
+                className="hover:text-foreground transition-colors"
+              >
+                Print résumé
+              </Link>
+              <Link
                 href="/design-system"
                 className="hover:text-foreground transition-colors"
               >

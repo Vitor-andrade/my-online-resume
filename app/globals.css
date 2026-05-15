@@ -219,3 +219,25 @@
     }
   }
 }
+
+/* ---------- PRINT ---------- */
+/* Force a light, ink-on-paper palette regardless of the active theme,
+   and drop screen-only chrome (the /cv page is the print surface). */
+@media print {
+  :root,
+  .dark {
+    --background: #ffffff;
+    --foreground: #1f2328;
+    --card: #ffffff;
+    --muted: #f6f8fa;
+    --muted-foreground: #57606a;
+    --accent: #ffffff;
+    --border: #d0d7de;
+    --primary: #1a7f37;
+    --brand: #1a7f37;
+  }
+
+  [data-print-hidden] {
+    display: none !important;
+  }
+}
