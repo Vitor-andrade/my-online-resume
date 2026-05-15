@@ -83,6 +83,7 @@
     "tech": "Tech"
   },
   "cv": {
+    "title": "Résumé",
     "backToSite": "Back to site",
     "print": "Print / Save as PDF",
     "summary": "Summary",
