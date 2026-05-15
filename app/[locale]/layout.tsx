@@ -4,8 +4,12 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { ThemeProvider } from "@/components/theme-provider";
+import { clientEnv } from "@/lib/env";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
+
+const SITE_URL =
+  clientEnv.NEXT_PUBLIC_SITE_URL ?? "https://my-online-resume.vercel.app";
 
 const geistSans = Geist({
   variable: "--font-sans",
@@ -29,6 +33,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "metadata" });
   return {
+    metadataBase: new URL(SITE_URL),
     title: { default: t("title"), template: "%s — Vitor Cavalcante" },
     description: t("description"),
   };

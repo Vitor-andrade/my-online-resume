@@ -57,6 +57,22 @@
       "emailMe": "Email me"
     }
   },
+  "contactForm": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "What would you like to discuss?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thanks — your message is on its way.",
+    "errorValidation": "Please check the form fields and try again.",
+    "errorTurnstile": "Anti-spam verification failed. Please try again.",
+    "errorNotConfigured": "Email delivery isn't set up yet — please reach me by email or LinkedIn.",
+    "errorGeneric": "Something went wrong. Please try again or email me directly.",
+    "directIntro": "Prefer email? Reach me directly:"
+  },
   "projectCard": {
     "privateRepo": "Private repository"
   },

@@ -57,6 +57,22 @@
       "emailMe": "Enviar e-mail"
     }
   },
+  "contactForm": {
+    "name": "Nome",
+    "namePlaceholder": "Seu nome",
+    "email": "E-mail",
+    "emailPlaceholder": "voce@exemplo.com",
+    "message": "Mensagem",
+    "messagePlaceholder": "O que você gostaria de conversar?",
+    "send": "Enviar mensagem",
+    "sending": "Enviando…",
+    "success": "Obrigado — sua mensagem está a caminho.",
+    "errorValidation": "Verifique os campos do formulário e tente novamente.",
+    "errorTurnstile": "A verificação anti-spam falhou. Tente novamente.",
+    "errorNotConfigured": "O envio de e-mail ainda não foi configurado — fale comigo por e-mail ou LinkedIn.",
+    "errorGeneric": "Algo deu errado. Tente novamente ou envie um e-mail diretamente.",
+    "directIntro": "Prefere e-mail? Fale comigo diretamente:"
+  },
   "projectCard": {
     "privateRepo": "Repositório privado"
   },
