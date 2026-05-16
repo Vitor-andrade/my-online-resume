@@ -5,7 +5,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { MotionProvider } from "@/components/motion-provider";
 import { PostHogProvider } from "@/components/posthog-provider";
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeScript } from "@/components/theme-script";
 import { clientEnv } from "@/lib/env";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -59,18 +59,12 @@ export default async function LocaleLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <PostHogProvider>
-            <NextIntlClientProvider>
-              <MotionProvider>{children}</MotionProvider>
-            </NextIntlClientProvider>
-          </PostHogProvider>
-        </ThemeProvider>
+        <ThemeScript />
+        <PostHogProvider>
+          <NextIntlClientProvider>
+            <MotionProvider>{children}</MotionProvider>
+          </NextIntlClientProvider>
+        </PostHogProvider>
       </body>
     </html>
   );

@@ -83,9 +83,10 @@
   --input: var(--paper-300);
   --ring: var(--gh-green-600);
 
-  /* Brand — the bright green stays constant across themes */
-  --brand: var(--gh-green-500);
-  --brand-foreground: var(--ink-950);
+  /* Brand — a darker green on light backgrounds, so brand-coloured
+     text keeps a legible (WCAG AA) contrast ratio. */
+  --brand: var(--gh-green-700);
+  --brand-foreground: var(--paper-50);
 
   --chart-1: var(--gh-green-600);
   --chart-2: var(--gh-green-700);
