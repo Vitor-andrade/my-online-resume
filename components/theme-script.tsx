@@ -1,9 +1,22 @@
-// Server Component — the inline script is rendered into the SSR HTML
-// and runs before first paint, so there is no flash of the wrong
-// theme and no client-rendered <script> for React 19 to warn about.
-// It applies a stored preference, falling back to the OS setting.
+/* eslint-disable @next/next/no-before-interactive-script-outside-document --
+   This IS the App Router root layout; the rule targets the legacy
+   pages/_document.js and does not apply here. */
+import Script from "next/script";
+
+// Resolves a stored theme (falling back to the OS preference) and
+// applies it to <html> before first paint, so there is no flash.
 const THEME_SCRIPT = `(function(){try{var e=localStorage.getItem('theme'),d=e==='dark'||(e!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches),r=document.documentElement;r.classList.toggle('dark',d);r.style.colorScheme=d?'dark':'light';}catch(e){}})();`;
 
+/**
+ * Injects the pre-paint theme script via next/script's
+ * `beforeInteractive` strategy. Unlike a raw <script> element, this is
+ * not reconciled into the React tree, so a client navigation (e.g. a
+ * locale switch) never re-renders it and React 19 raises no warning.
+ */
 export function ThemeScript() {
-  return <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />;
+  return (
+    <Script id="theme-init" strategy="beforeInteractive">
+      {THEME_SCRIPT}
+    </Script>
+  );
 }
