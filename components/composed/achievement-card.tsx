@@ -18,7 +18,7 @@ export function AchievementCard({
   return (
     <Link
       href={`/achievements/${slug}`}
-      className="group bg-card hover:border-brand/40 focus-visible:ring-ring block rounded-lg border p-5 transition-colors focus-visible:ring-2 focus-visible:outline-none sm:p-6"
+      className="group bg-card hover:border-brand/40 hover:shadow-brand/25 focus-visible:ring-ring relative block rounded-lg border p-5 transition-all hover:z-10 hover:scale-[1.03] hover:shadow-xl focus-visible:ring-2 focus-visible:outline-none sm:p-6"
     >
       <Stack gap="md">
         <Stack gap="xs">
