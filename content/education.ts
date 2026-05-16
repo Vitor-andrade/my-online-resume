@@ -4,34 +4,38 @@ import { type Education, educationSchema } from "./schema";
 const educationByLocale = {
   en: [
     {
-      institution: "UniCEUB",
+      institution: "Centro Universitário de Brasília - UniCEUB",
       degree: "Postgraduate (Lato Sensu)",
-      field: "Information Technology — Cybersecurity",
+      field: "Cybersecurity",
       start: "2023-02",
       end: "2023-10",
+      credentialUrl: "/Certificado_digital_POS_CYBERSEC.pdf",
     },
     {
-      institution: "UniCEUB",
+      institution: "Centro Universitário de Brasília - UniCEUB",
       degree: "Bachelor of Engineering",
       field: "Computer Engineering",
       start: "2015-01",
       end: "2020-06",
+      credentialUrl: "/Certificado_CEUB_Graduacao.pdf",
     },
   ],
   "pt-BR": [
     {
-      institution: "UniCEUB",
+      institution: "Centro Universitário de Brasília - UniCEUB",
       degree: "Pós-graduação (Lato Sensu)",
-      field: "Tecnologia da Informação — Cibersegurança",
+      field: "Cibersegurança",
       start: "2023-02",
       end: "2023-10",
+      credentialUrl: "/Certificado_digital_POS_CYBERSEC.pdf",
     },
     {
-      institution: "UniCEUB",
+      institution: "Centro Universitário de Brasília - UniCEUB",
       degree: "Bacharelado em Engenharia",
       field: "Engenharia de Computação",
       start: "2015-01",
       end: "2020-06",
+      credentialUrl: "/Certificado_CEUB_Graduacao.pdf",
     },
   ],
 } satisfies Record<Locale, unknown[]>;

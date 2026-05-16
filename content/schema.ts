@@ -62,6 +62,8 @@ export const educationSchema = z.object({
   field: z.string().min(1).optional(),
   start: yearMonth,
   end: yearMonth.nullable(),
+  /** Path or URL to the diploma/credential; opened in a new tab. */
+  credentialUrl: z.string().min(1).optional(),
 });
 
 export const metricSchema = z.object({
@@ -93,6 +95,8 @@ export const certificationSchema = z.object({
   name: z.string().min(1),
   issuer: z.string().min(1),
   year: z.number().int(),
+  /** Path or URL to the certificate; opened in a new tab. */
+  credentialUrl: z.string().min(1).optional(),
 });
 
 export type SocialLink = z.infer<typeof socialLinkSchema>;

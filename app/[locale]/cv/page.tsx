@@ -176,8 +176,22 @@ export default async function CvPage({
                   >
                     <Stack gap="none">
                       <span className="text-sm font-semibold">
-                        {entry.degree}
-                        {entry.field ? ` — ${entry.field}` : ""}
+                        {entry.credentialUrl ? (
+                          <a
+                            href={entry.credentialUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-brand underline-offset-2 hover:underline"
+                          >
+                            {entry.degree}
+                            {entry.field ? ` — ${entry.field}` : ""}
+                          </a>
+                        ) : (
+                          <>
+                            {entry.degree}
+                            {entry.field ? ` — ${entry.field}` : ""}
+                          </>
+                        )}
                       </span>
                       <span className="text-muted-foreground text-xs">
                         {entry.institution}
@@ -195,7 +209,19 @@ export default async function CvPage({
               <Stack as="ul" gap="xs">
                 {certifications.map((cert) => (
                   <li key={cert.name} className="text-muted-foreground text-sm">
-                    {cert.name} — {cert.issuer}, {cert.year}
+                    {cert.credentialUrl ? (
+                      <a
+                        href={cert.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-brand font-medium underline-offset-2 hover:underline"
+                      >
+                        {cert.name}
+                      </a>
+                    ) : (
+                      <span className="font-medium">{cert.name}</span>
+                    )}{" "}
+                    — {cert.issuer}, {cert.year}
                   </li>
                 ))}
               </Stack>
