@@ -71,7 +71,7 @@
     "errorTurnstile": "A verificação anti-spam falhou. Tente novamente.",
     "errorNotConfigured": "O envio de e-mail ainda não foi configurado — fale comigo por e-mail ou LinkedIn.",
     "errorGeneric": "Algo deu errado. Tente novamente ou envie um e-mail diretamente.",
-    "directIntro": "Prefere e-mail? Fale comigo diretamente:"
+    "directIntro": "Fale comigo diretamente:"
   },
   "projectCard": {
     "privateRepo": "Repositório privado"

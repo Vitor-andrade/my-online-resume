@@ -71,7 +71,7 @@
     "errorTurnstile": "Anti-spam verification failed. Please try again.",
     "errorNotConfigured": "Email delivery isn't set up yet — please reach me by email or LinkedIn.",
     "errorGeneric": "Something went wrong. Please try again or email me directly.",
-    "directIntro": "Prefer email? Reach me directly:"
+    "directIntro": "Reach out directly:"
   },
   "projectCard": {
     "privateRepo": "Private repository"
