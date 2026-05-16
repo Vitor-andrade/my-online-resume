@@ -14,7 +14,7 @@ export async function Projects() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("sections.projects");
   const projects = getProjects(locale);
-  const repos = await getTopRepositories(4);
+  const repos = await getTopRepositories();
 
   return (
     <Section
