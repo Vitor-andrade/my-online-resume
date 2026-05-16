@@ -10,10 +10,11 @@ const experiences = {
       start: "2025-07",
       end: null,
       highlights: [
-        "Decoupled a monolithic Next.js application into a scalable frontend (Next.js) and backend (NestJS); delivered 20% ahead of a 40-day deadline, boosting user interactions 40% and conversion 4% on a platform handling thousands of daily registrations.",
-        "Architected cloud-native backend services with Redis caching, PostgreSQL persistence and Drizzle ORM on AWS (S3, EC2, RDS, Lambda), applying performance tuning to sustain higher traffic volumes.",
-        "Shipped third-party integrations with D4Sign, HubSpot, Pipedrive and PostHog for contract signing, CRM automation and product observability via RESTful APIs, eliminating manual operational effort.",
-        "Accelerated delivery speed 30% and reduced production issues 20% by implementing CI/CD with GitHub Actions, Doppler-managed secrets and AI-assisted workflows (CodeRabbit, Cursor, Claude).",
+        "Led the refactor and delivery of a new product architecture by decoupling a monolithic Next.js application into a scalable frontend (Next.js) and backend (NestJS). Delivered the project in 32 days (ahead of a 40-day deadline), increasing user interactions by 40% and boosting conversion rate by 4%, while supporting a platform handling thousands of daily user registrations.",
+        "Optimized application performance and data flow by implementing caching strategies and scalable backend services, improving system responsiveness and handling increased traffic. Leveraged Redis for caching, PostgreSQL for data persistence, and Drizzle ORM for type-safe database access and migrations, alongside AWS services including S3, EC2, RDS, and Lambda.",
+        "Designed and implemented third-party integrations with platforms such as D4Sign, HubSpot, Pipedrive, and PostHog, enabling seamless contract signing, CRM automation, and user behavior analytics. Improved data consistency and reduced manual operational effort through robust API integrations using Node.js, Nest.js, TypeScript, and RESTful services.",
+        "Built serverless data processing pipelines using AWS Lambda integrated with Golang middleware to handle CRM data ingestion, improving request performance by ~5% and ensuring data integrity across systems. Utilized AWS Lambda, Golang, HubSpot API, and Pipedrive API.",
+        "Enhanced development workflow and team productivity in a small team environment by implementing CI/CD pipelines and AI-assisted development practices. Introduced GitHub Actions, Doppler for secrets management, and AI tools like CodeRabbit and Cursor (Claude), accelerating delivery cycles and improving code quality, increasing development speed by 30% and reducing bugs and issues by 20%.",
       ],
       stack: [
         "Next.js",
@@ -27,6 +28,7 @@ const experiences = {
         "Redis",
         "AWS",
         "PostHog",
+        "Golang",
       ],
     },
     {
@@ -36,8 +38,11 @@ const experiences = {
       start: "2022-09",
       end: null,
       highlights: [
-        "Architected secure CI/CD pipelines for healthcare and financial platforms serving millions of users, integrating SAST, SCA and DAST tooling (Fortify, Veracode, SonarQube) with GitHub Actions and AWS CloudWatch; cut first-response SLA from 3 days to 24 hours and ticket volume 30% through Python-based automation.",
-        "Led code-level remediation of SQL Injection vulnerabilities across ~300 applications, building Python integrations with Fortify APIs to deliver OWASP Top 10–compliant code at scale.",
+        "Implemented and maintained secure development pipelines for leading healthcare and financial institutions, integrating SAST, SCA, and DAST tools into CI/CD workflows. Standardized vulnerability scanning across applications, increasing security coverage and reducing exposure to critical risks. Strengthened security posture for millions of users and ensured enterprise-grade compliance through orchestration of Fortify, Veracode, and Debricked.",
+        "Designed reusable YAML templates in Azure DevOps to enforce secure pipeline standards and prevent vulnerability scan bypass, particularly for Fortify integrations. Accelerated pipeline adoption and reduced manual configuration while ensuring compliance with security policies. Leveraged Azure DevOps YAML templates, Terraform, and Infrastructure as Code (IaC) practices.",
+        "Led large-scale vulnerability remediation initiative, identifying and fixing hundreds of SQL Injection issues across ~300 applications of a healthcare platform. Enhanced security for systems serving millions of users by leveraging automated scan reports and AI-assisted workflows. Used Veracode, SonarQube, VS Code, GitHub Copilot, and Python-based Fortify API integrations.",
+        "Acted in high-pressure war room operations for a major financial client, improving AppSec support efficiency and contract performance over a 6-month critical period. Increased response speed by 40%, handled 5,567 tickets, and analyzed over 20,000 vulnerabilities, including 6,328 false positives, ensuring mitigation aligned with OWASP Top 10 (2021). Utilized GitHub Actions, Veracode, SonarQube, and ServiceNow.",
+        "Redesigned vulnerability observability and incident response workflows, implementing automated reporting pipelines integrated with monitoring and ticketing systems. Reduced first response SLA from 3 days to 24 hours and decreased ticket volume by 30% through automation and root-cause analysis. Used AWS CloudWatch, ServiceNow, Python, Devin, and StackSpot.",
       ],
       stack: [
         "Python",
@@ -46,6 +51,7 @@ const experiences = {
         "Fortify",
         "Veracode",
         "SonarQube",
+        "Azure DevOps",
       ],
     },
     {
@@ -55,11 +61,15 @@ const experiences = {
       start: "2020-01",
       end: "2025-01",
       highlights: [
-        "Engineered a real-time mobile platform for event discovery and transactions with geolocation, WebSocket-based payments, QR code validation, JWT and role-based access control, serving hundreds of thousands of users.",
-        "Diagnosed and resolved a critical payment bug via log tracing in AWS EC2 (PM2), reducing API response time from 5 minutes to 10 seconds and recovering over R$50K in financial discrepancies.",
-        "Enhanced API security by redesigning endpoints and migrating from Node.js to NestJS, mitigating large-scale DDoS and brute-force attacks and reducing response time by 12%.",
+        "Led internationalization and large-scale refactor for a platform with 1M+ users, restructuring 2 mobile apps, 3 Node.js APIs, and an admin dashboard to support 4 languages (PT-BR/PT, EN, ES, FR). Built a dynamic translation system enabling real-time updates, reducing support tickets by 30% and enabling expansion into Europe and the US, generating new revenue. Utilized React Native, React.js, Node.js, PostgreSQL, and i18n.",
+        "Diagnosed and resolved a critical financial bug in a high-traffic payment system, identifying an infinite loop via log tracing in AWS EC2 (PM2). Reduced API response time from 5 minutes to 10 seconds and corrected inconsistencies, resulting in a financial impact exceeding R$50K and improving reliability. Used Node.js, AWS EC2, PM2, and log analysis.",
+        "Engineered a real-time mobile platform for event discovery and transactions, supporting hundreds of thousands of users and high volumes. Implemented geolocation, WebSockets for real-time payments, and QR code validation for ticketing and delivery. Ensured secure transactions using JWT and role-based access control. Utilized React Native (Expo), Node.js, WebSockets, PostgreSQL, and Zoop.",
+        "Mitigated a high-scale DDoS/brute-force attack on a credit card endpoint by redesigning API security, sanitizing inputs, and migrating from Node.js to NestJS for improved validation. Reduced API response time by 12% and prevented further attacks. Leveraged NestJS, Node.js, and secure coding practices.",
+        "Led recovery of a high-risk agricultural platform contract, acting as Technical Lead to realign delivery and client expectations through Agile workflows. Translated needs into epics and tasks in Jira, improving delivery quality. Prevented a R$600K penalty and drove an additional R$120K investment. Utilized Python, Django, JavaScript, HTML, CSS, and Jira.",
       ],
       stack: [
+        "React",
+        "Next.js",
         "React Native",
         "Expo",
         "Node.js",
@@ -68,6 +78,10 @@ const experiences = {
         "PostgreSQL",
         "AWS EC2",
         "Zoop",
+        "Jira",
+        "Python",
+        "Django",
+        "PHP",
       ],
     },
     {
@@ -100,10 +114,12 @@ const experiences = {
       start: "2025-07",
       end: null,
       highlights: [
-        "Desacoplou uma aplicação Next.js monolítica em um frontend escalável (Next.js) e um backend (NestJS); entregou 20% antes de um prazo de 40 dias, elevando as interações dos usuários em 40% e a conversão em 4% numa plataforma com milhares de cadastros diários.",
-        "Arquitetou serviços de backend cloud-native com cache em Redis, persistência em PostgreSQL e Drizzle ORM na AWS (S3, EC2, RDS, Lambda), aplicando tuning de performance para sustentar volumes maiores de tráfego.",
-        "Entregou integrações com terceiros — D4Sign, HubSpot, Pipedrive e PostHog — para assinatura de contratos, automação de CRM e observabilidade de produto via APIs RESTful, eliminando esforço operacional manual.",
-        "Acelerou a velocidade de entrega em 30% e reduziu incidentes em produção em 20% implementando CI/CD com GitHub Actions, segredos gerenciados pelo Doppler e fluxos assistidos por IA (CodeRabbit, Cursor, Claude).",
+        "Liderou a refatoração e entrega de uma nova arquitetura de produto desacoplando um monolito Next.js em um frontend escalável (Next.js) e um backend (NestJS). Entregou o projeto em 32 dias (20% antes do prazo de 40 dias), aumentando as interações dos usuários em 40% e aumentando a taxa de conversão em 4%, enquanto suportava uma plataforma que atendia milhares de cadastros diários de usuários.",
+        "Led the refactor and delivery of a new product architecture by decoupling a monolithic Next.js application into a scalable frontend (Next.js) and backend (NestJS). Delivered the project in 32 days (ahead of a 40-day deadline), increasing user interactions by 40% and boosting conversion rate by 4%, while supporting a platform handling thousands of daily user registrations.",
+        "Optimized application performance and data flow by implementing caching strategies and scalable backend services, improving system responsiveness and handling increased traffic. Leveraged Redis for caching, PostgreSQL for data persistence, and Drizzle ORM for type-safe database access and migrations, alongside AWS services including S3, EC2, RDS, and Lambda.",
+        "Designed and implemented third-party integrations with platforms such as D4Sign, HubSpot, Pipedrive, and PostHog, enabling seamless contract signing, CRM automation, and user behavior analytics. Improved data consistency and reduced manual operational effort through robust API integrations using Node.js, Nest.js, TypeScript, and RESTful services.",
+        "Built serverless data processing pipelines using AWS Lambda integrated with Golang middleware to handle CRM data ingestion, improving request performance by ~5% and ensuring data integrity across systems. Utilized AWS Lambda, Golang, HubSpot API, and Pipedrive API.",
+        "Enhanced development workflow and team productivity in a small team environment by implementing CI/CD pipelines and AI-assisted development practices. Introduced GitHub Actions, Doppler for secrets management, and AI tools like CodeRabbit and Cursor (Claude), accelerating delivery cycles and improving code quality, increasing development speed by 30% and reducing bugs and issues by 20%.",
       ],
       stack: [
         "Next.js",

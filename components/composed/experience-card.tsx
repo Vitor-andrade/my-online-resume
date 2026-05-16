@@ -1,5 +1,5 @@
+import { TechBadge } from "@/components/composed/tech-badge";
 import { Cluster, Stack } from "@/components/layout";
-import { Badge } from "@/components/ui/badge";
 import type { Experience } from "@/content";
 import { formatDateRange } from "@/lib/format";
 
@@ -51,7 +51,7 @@ export function ExperienceCard({
         <Cluster as="ul" gap="xs">
           {stack.map((tech) => (
             <li key={tech}>
-              <Badge variant="secondary">{tech}</Badge>
+              <TechBadge name={tech} />
             </li>
           ))}
         </Cluster>

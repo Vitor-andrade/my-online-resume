@@ -1,7 +1,7 @@
+import { TechBadge } from "@/components/composed/tech-badge";
 import { Cluster, Stack } from "@/components/layout";
 import { Badge } from "@/components/ui/badge";
 import type { SkillCategory as SkillCategoryData } from "@/content";
-import { getSkillIcon } from "@/lib/skill-icons";
 import { cn } from "@/lib/utils";
 
 /** Card listing one skill category as a set of badges. */
@@ -31,17 +31,11 @@ export function SkillCategory({
         ) : null}
       </Cluster>
       <Cluster as="ul" gap="xs">
-        {skills.map((skill) => {
-          const Icon = getSkillIcon(skill);
-          return (
-            <li key={skill}>
-              <Badge variant="secondary" className="gap-1.5">
-                {Icon ? <Icon className="text-brand size-[0.9625rem]" /> : null}
-                {skill}
-              </Badge>
-            </li>
-          );
-        })}
+        {skills.map((skill) => (
+          <li key={skill}>
+            <TechBadge name={skill} />
+          </li>
+        ))}
       </Cluster>
     </Stack>
   );
