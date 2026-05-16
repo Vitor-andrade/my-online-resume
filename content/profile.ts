@@ -41,7 +41,11 @@ const profiles = {
     ],
     socials: SOCIALS,
     languages: [
-      { name: "English", level: "C1 — Advanced" },
+      {
+        name: "English",
+        level: "C1 — Advanced",
+        credentialUrl: "/IELTS_ACADEMIC.pdf",
+      },
       { name: "Portuguese", level: "Native" },
       { name: "Spanish", level: "B1 — Intermediate" },
       { name: "French", level: "A1 — Beginner" },
@@ -64,7 +68,11 @@ const profiles = {
     ],
     socials: SOCIALS,
     languages: [
-      { name: "Inglês", level: "C1 — Avançado" },
+      {
+        name: "Inglês",
+        level: "C1 — Avançado",
+        credentialUrl: "/IELTS_ACADEMIC.pdf",
+      },
       { name: "Português", level: "Nativo" },
       { name: "Espanhol", level: "B1 — Intermediário" },
       { name: "Francês", level: "A1 — Básico" },

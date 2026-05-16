@@ -229,9 +229,24 @@ export default async function CvPage({
 
             <DocSection title={t("languages")}>
               <p className="text-muted-foreground text-sm">
-                {profile.languages
-                  .map((language) => `${language.name} (${language.level})`)
-                  .join(" · ")}
+                {profile.languages.map((language, index) => (
+                  <span key={language.name}>
+                    {index > 0 ? " · " : ""}
+                    {language.credentialUrl ? (
+                      <a
+                        href={language.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-brand font-medium underline-offset-2 hover:underline"
+                      >
+                        {language.name}
+                      </a>
+                    ) : (
+                      language.name
+                    )}{" "}
+                    ({language.level})
+                  </span>
+                ))}
               </p>
             </DocSection>
           </Stack>

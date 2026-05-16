@@ -24,6 +24,8 @@ export const socialLinkSchema = z.object({
 export const languageSchema = z.object({
   name: z.string().min(1),
   level: z.string().min(1),
+  /** Path or URL to a proficiency certificate; opened in a new tab. */
+  credentialUrl: z.string().min(1).optional(),
 });
 
 export const profileSchema = z.object({
