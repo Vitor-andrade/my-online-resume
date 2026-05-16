@@ -36,7 +36,7 @@ export function SkillCategory({
           return (
             <li key={skill}>
               <Badge variant="secondary" className="gap-1.5">
-                {Icon ? <Icon className="size-3.5" /> : null}
+                {Icon ? <Icon className="text-brand size-[0.9625rem]" /> : null}
                 {skill}
               </Badge>
             </li>
