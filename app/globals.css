@@ -206,6 +206,10 @@
   }
   html {
     @apply font-sans;
+    /* Lifts the whole rem-based type scale ~6% (16px → 17px) for
+       readability, as a percentage so it respects the browser's
+       own font-size preference. */
+    font-size: 106.25%;
   }
   /* Accessibility: honor the OS reduced-motion preference globally. */
   @media (prefers-reduced-motion: reduce) {
