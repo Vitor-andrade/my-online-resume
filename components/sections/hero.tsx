@@ -47,7 +47,10 @@ export async function Hero() {
         </Stack>
 
         <Cluster gap="sm">
-          <a href="#contact" className={buttonVariants({ size: "lg" })}>
+          <a
+            href="#contact"
+            className={`${buttonVariants({ size: "lg" })} active:scale-[0.97]`}
+          >
             {t("getInTouch")}
             <ArrowDown aria-hidden className="animate-scroll-hint" />
           </a>

@@ -225,6 +225,9 @@
        readability, as a percentage so it respects the browser's
        own font-size preference. */
     font-size: 113%;
+    /* Anchor clicks glide instead of jumping; the reduced-motion
+       rule below resets this to an instant jump. */
+    scroll-behavior: smooth;
   }
   /* Accessibility: honor the OS reduced-motion preference globally. */
   @media (prefers-reduced-motion: reduce) {
