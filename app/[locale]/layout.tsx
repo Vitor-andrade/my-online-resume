@@ -6,6 +6,7 @@ import { notFound } from "next/navigation";
 import { MotionProvider } from "@/components/motion-provider";
 import { PostHogProvider } from "@/components/posthog-provider";
 import { ThemeScript } from "@/components/theme-script";
+import { ThemeWatcher } from "@/components/theme-watcher";
 import { clientEnv } from "@/lib/env";
 import { routing } from "@/i18n/routing";
 import "../globals.css";
@@ -60,6 +61,7 @@ export default async function LocaleLayout({
     >
       <body className="flex min-h-full flex-col">
         <ThemeScript />
+        <ThemeWatcher />
         <PostHogProvider>
           <NextIntlClientProvider>
             <MotionProvider>{children}</MotionProvider>

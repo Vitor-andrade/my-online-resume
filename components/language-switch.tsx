@@ -29,11 +29,12 @@ export function LanguageSwitch() {
             key={locale}
             href={pathname}
             locale={locale}
+            scroll={false}
             aria-current={isActive ? "true" : undefined}
             className={cn(
               "rounded px-1.5 py-0.5 font-mono text-xs transition-colors",
               isActive
-                ? "bg-muted text-foreground"
+                ? "bg-brand text-brand-foreground font-semibold"
                 : "text-muted-foreground hover:text-foreground",
             )}
           >
