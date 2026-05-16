@@ -41,7 +41,7 @@ export function SocialLinks({ links }: SocialLinksProps) {
                 ? {}
                 : { target: "_blank", rel: "noopener noreferrer" })}
               aria-label={link.label}
-              className="text-muted-foreground hover:text-brand focus-visible:ring-ring focus-visible:text-brand inline-flex size-9 items-center justify-center rounded-md transition-colors focus-visible:ring-2 focus-visible:outline-none [&_svg]:size-5"
+              className="text-muted-foreground hover:text-brand focus-visible:ring-ring focus-visible:text-brand inline-flex size-9 items-center justify-center rounded-md transition-colors focus-visible:ring-2 focus-visible:outline-none [&_svg]:size-5 [&_svg]:transition-transform hover:[&_svg]:scale-115"
             >
               <Icon aria-hidden />
             </a>
