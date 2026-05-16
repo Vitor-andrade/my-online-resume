@@ -3,10 +3,10 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { Metric } from "@/components/composed/metric";
+import { TechBadge } from "@/components/composed/tech-badge";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
-import { Badge } from "@/components/ui/badge";
 import { achievementSlugs, getAchievementBySlug } from "@/content";
 import { Link } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
@@ -94,7 +94,7 @@ export default async function AchievementPage({
               <Cluster as="ul" gap="xs">
                 {achievement.tech.map((item) => (
                   <li key={item}>
-                    <Badge variant="secondary">{item}</Badge>
+                    <TechBadge name={item} />
                   </li>
                 ))}
               </Cluster>

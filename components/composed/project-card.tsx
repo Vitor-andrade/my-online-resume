@@ -2,9 +2,9 @@ import { SiGithub } from "@icons-pack/react-simple-icons";
 import { Lock } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Cluster, Stack } from "@/components/layout";
-import { Badge } from "@/components/ui/badge";
 import type { Project } from "@/content";
 import { cn } from "@/lib/utils";
+import { TechBadge } from "./tech-badge";
 
 /** Card for a featured project. Links to GitHub when the repo is public. */
 export async function ProjectCard({
@@ -44,7 +44,7 @@ export async function ProjectCard({
       <Cluster as="ul" gap="xs">
         {stack.map((tech) => (
           <li key={tech}>
-            <Badge variant="secondary">{tech}</Badge>
+            <TechBadge name={tech} />
           </li>
         ))}
       </Cluster>

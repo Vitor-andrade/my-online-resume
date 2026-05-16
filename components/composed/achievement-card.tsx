@@ -1,9 +1,9 @@
 import { ArrowUpRight } from "lucide-react";
 import { Cluster, Stack } from "@/components/layout";
-import { Badge } from "@/components/ui/badge";
 import type { Achievement } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { Metric } from "./metric";
+import { TechBadge } from "./tech-badge";
 
 /** Card for a key achievement — links to its dedicated case-study route. */
 export function AchievementCard({
@@ -50,7 +50,7 @@ export function AchievementCard({
         <Cluster as="ul" gap="xs">
           {tech.map((item) => (
             <li key={item}>
-              <Badge variant="secondary">{item}</Badge>
+              <TechBadge name={item} />
             </li>
           ))}
         </Cluster>
