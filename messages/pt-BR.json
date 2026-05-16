@@ -23,7 +23,8 @@
       "eyebrow": "com o que eu trabalho",
       "title": "Habilidades & Stack",
       "description": "Mais de seis anos entre frontend, backend, mobile e cloud — com foco crescente em engenharia assistida por IA.",
-      "focus": "destaque"
+      "focus": "destaque",
+      "all": "Todas"
     },
     "experience": {
       "eyebrow": "onde eu trabalhei",
