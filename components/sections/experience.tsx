@@ -25,8 +25,11 @@ export async function Experience() {
           >
             <span
               aria-hidden
-              className="bg-brand ring-background absolute top-6 left-0 size-3 -translate-x-1/2 rounded-full ring-4"
-            />
+              className="absolute top-6 left-0 size-3 -translate-x-1/2"
+            >
+              <span className="bg-brand absolute inline-flex size-full animate-ping rounded-full opacity-60" />
+              <span className="bg-brand ring-background relative inline-flex size-full rounded-full ring-4" />
+            </span>
             <ExperienceCard {...entry} />
           </li>
         ))}
