@@ -4,6 +4,21 @@ import { type Achievement, achievementSchema } from "./schema";
 const achievementSets = {
   en: [
     {
+      slug: "high-risk-project-recovery",
+      title: "High-Risk Project Recovery",
+      organization: "Finatec",
+      period: "2023 – 2024",
+      summary:
+        "Led the recovery of a critical agricultural research project, acting as a Technical Leader to restructure delivery workflows, align business requirements with engineering execution and restore client trust.",
+      impact:
+        "Prevented a R$600K contract loss and unlocked R$120K in additional investment by improving the delivery process.",
+      metrics: [
+        { value: "R$600K", label: "contract loss prevented" },
+        { value: "+R$120K", label: "additional investment unlocked" },
+      ],
+      tech: ["Python", "Django", "Agile", "Jira"],
+    },
+    {
       slug: "global-platform-internationalization",
       title: "Global Platform Internationalization",
       organization: "Fridom",
@@ -35,23 +50,23 @@ const achievementSets = {
       ],
       tech: ["Node.js", "PostgreSQL", "Docker", "AWS EC2", "GitLab CI/CD"],
     },
+  ],
+  "pt-BR": [
     {
       slug: "high-risk-project-recovery",
-      title: "High-Risk Project Recovery",
+      title: "Recuperação de Projeto de Alto Risco",
       organization: "Finatec",
       period: "2023 – 2024",
       summary:
-        "Acted as Technical Lead to recover a critical agricultural research platform, restructuring delivery workflows, aligning business requirements with engineering execution and restoring client trust.",
+        "Atuou como Líder Técnico na recuperação de uma plataforma crítica de pesquisa agrícola, reestruturando os fluxos de entrega, alinhando os requisitos de negócio à execução de engenharia e restaurando a confiança do cliente.",
       impact:
-        "Prevented a R$600K contract loss and unlocked R$120K in additional investment through improved delivery.",
+        "Evitou a perda de um contrato de R$600 mil e liberou R$120 mil em investimento adicional por meio de uma entrega aprimorada.",
       metrics: [
-        { value: "R$600K", label: "contract loss prevented" },
-        { value: "+R$120K", label: "new investment unlocked" },
+        { value: "R$600K", label: "perda de contrato evitada" },
+        { value: "+R$120K", label: "liberação de investimento adicional" },
       ],
       tech: ["Python", "Django", "Agile", "Jira"],
     },
-  ],
-  "pt-BR": [
     {
       slug: "global-platform-internationalization",
       title: "Internacionalização de Plataforma Global",
@@ -60,7 +75,7 @@ const achievementSets = {
       summary:
         "Liderou a internacionalização e a refatoração completa de uma plataforma com mais de 1 milhão de usuários, reestruturando 2 apps mobile, 3 APIs Node.js e um dashboard para suportar 4 idiomas por meio de um sistema dinâmico de gestão de traduções em tempo real.",
       impact:
-        "Reduziu os chamados de suporte em 30% e destravou a expansão para a Europa e os Estados Unidos, gerando uma nova fonte de receita.",
+        "Reduziu os chamados de suporte em 30% e permitiu a expansão para a Europa e os Estados Unidos, gerando uma nova fonte de receita.",
       metrics: [
         { value: "1M+", label: "usuários atendidos" },
         { value: "−30%", label: "chamados de suporte" },
@@ -83,21 +98,6 @@ const achievementSets = {
         { value: "0", label: "passos manuais de release" },
       ],
       tech: ["Node.js", "PostgreSQL", "Docker", "AWS EC2", "GitLab CI/CD"],
-    },
-    {
-      slug: "high-risk-project-recovery",
-      title: "Recuperação de Projeto de Alto Risco",
-      organization: "Finatec",
-      period: "2023 – 2024",
-      summary:
-        "Atuou como Líder Técnico na recuperação de uma plataforma crítica de pesquisa agrícola, reestruturando os fluxos de entrega, alinhando os requisitos de negócio à execução de engenharia e restaurando a confiança do cliente.",
-      impact:
-        "Evitou a perda de um contrato de R$600 mil e destravou R$120 mil em investimento adicional por meio de uma entrega aprimorada.",
-      metrics: [
-        { value: "R$600K", label: "perda de contrato evitada" },
-        { value: "+R$120K", label: "novo investimento destravado" },
-      ],
-      tech: ["Python", "Django", "Agile", "Jira"],
     },
   ],
 } satisfies Record<Locale, unknown[]>;
