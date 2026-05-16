@@ -1,11 +1,10 @@
 import { getLocale, getTranslations } from "next-intl/server";
 import { ExperienceCard } from "@/components/composed/experience-card";
 import { Section } from "@/components/composed/section";
-import { Stack } from "@/components/layout";
 import { getExperience } from "@/content";
 import type { Locale } from "@/i18n/routing";
 
-/** Work-experience section. */
+/** Work-experience section, laid out as a vertical timeline. */
 export async function Experience() {
   const locale = (await getLocale()) as Locale;
   const t = await getTranslations("sections.experience");
@@ -18,11 +17,20 @@ export async function Experience() {
       title={t("title")}
       description={t("description")}
     >
-      <Stack gap="md">
+      <ol className="relative">
         {experience.map((entry) => (
-          <ExperienceCard key={`${entry.company}-${entry.start}`} {...entry} />
+          <li
+            key={`${entry.company}-${entry.start}`}
+            className="border-border relative border-l pb-8 pl-8 last:pb-0"
+          >
+            <span
+              aria-hidden
+              className="bg-brand ring-background absolute top-6 left-0 size-3 -translate-x-1/2 rounded-full ring-4"
+            />
+            <ExperienceCard {...entry} />
+          </li>
         ))}
-      </Stack>
+      </ol>
     </Section>
   );
 }
