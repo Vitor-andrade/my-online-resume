@@ -18,7 +18,7 @@ export async function Hero() {
       as="section"
       id="top"
       size="lg"
-      className="py-20 sm:py-28"
+      className="py-20 sm:py-20"
       aria-labelledby="hero-name"
     >
       <Stack gap="lg">
@@ -49,7 +49,7 @@ export async function Hero() {
         <Cluster gap="sm">
           <a href="#contact" className={buttonVariants({ size: "lg" })}>
             {t("getInTouch")}
-            <ArrowDown aria-hidden />
+            <ArrowDown aria-hidden className="animate-scroll-hint" />
           </a>
           <a
             href={profile.resumePdf}
