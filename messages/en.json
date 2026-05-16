@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "Vitor Cavalcante — Senior Fullstack Engineer",
-    "description": "Online résumé of Vitor Cavalcante, a Senior Fullstack Engineer with 6+ years building scalable, cloud-native web and mobile platforms."
+    "description": "Online CV of Vitor Cavalcante, a Senior Fullstack Engineer with 6+ years building scalable, cloud-native web and mobile platforms."
   },
   "nav": {
     "skills": "Skills",
@@ -83,7 +83,7 @@
     "tech": "Tech"
   },
   "cv": {
-    "title": "Résumé",
+    "title": "CV",
     "backToSite": "Back to site",
     "print": "Print / Save as PDF",
     "summary": "Summary",
@@ -96,7 +96,7 @@
   },
   "footer": {
     "rights": "All rights reserved.",
-    "printResume": "Print résumé",
+    "printResume": "Print CV",
     "designSystem": "Design System",
     "builtWith": "Built with Next.js · Crafted with Claude + Cursor"
   }
