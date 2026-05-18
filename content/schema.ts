@@ -73,15 +73,32 @@ export const metricSchema = z.object({
   label: z.string().min(1),
 });
 
+/** One narrative block of an achievement's case study. Most
+ *  achievements have a single chapter; multi-part work (e.g. a web
+ *  platform plus a mobile app) has one chapter per part. */
+export const achievementChapterSchema = z.object({
+  /** Section heading — omit for a single-chapter achievement. */
+  title: z.string().min(1).optional(),
+  summary: z.string().min(1).optional(),
+  highlights: z.array(z.string().min(1)).min(1),
+  outcomes: z.array(z.string().min(1)).min(1),
+  /** Public image paths shown in the chapter's gallery. */
+  gallery: z.array(z.string().startsWith("/")).default([]),
+});
+
 export const achievementSchema = z.object({
   slug,
   title: z.string().min(1),
   organization: z.string().min(1),
   period: z.string().min(1),
+  /** Cover image — the card banner and the detail-page hero. */
+  cover: z.string().startsWith("/"),
   summary: z.string().min(1),
+  /** Short impact line, used on the printable CV. */
   impact: z.string().min(1),
   metrics: z.array(metricSchema).default([]),
   tech: z.array(z.string().min(1)).min(1),
+  chapters: z.array(achievementChapterSchema).min(1),
 });
 
 export const projectSchema = z.object({
@@ -109,5 +126,6 @@ export type Experience = z.infer<typeof experienceSchema>;
 export type Education = z.infer<typeof educationSchema>;
 export type Metric = z.infer<typeof metricSchema>;
 export type Achievement = z.infer<typeof achievementSchema>;
+export type AchievementChapter = z.infer<typeof achievementChapterSchema>;
 export type Project = z.infer<typeof projectSchema>;
 export type Certification = z.infer<typeof certificationSchema>;

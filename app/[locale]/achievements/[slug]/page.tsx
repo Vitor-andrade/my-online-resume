@@ -1,7 +1,9 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Check } from "lucide-react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import Image from "next/image";
 import { notFound } from "next/navigation";
+import { AchievementGallery } from "@/components/composed/achievement-gallery";
 import { Metric } from "@/components/composed/metric";
 import { TechBadge } from "@/components/composed/tech-badge";
 import { Cluster, Container, Stack } from "@/components/layout";
@@ -26,7 +28,11 @@ export async function generateMetadata({
   const { locale, slug } = await params;
   const achievement = getAchievementBySlug(locale as Locale, slug);
   if (!achievement) return {};
-  return { title: achievement.title, description: achievement.summary };
+  return {
+    title: achievement.title,
+    description: achievement.summary,
+    openGraph: { images: [achievement.cover] },
+  };
 }
 
 export default async function AchievementPage({
@@ -65,6 +71,19 @@ export default async function AchievementPage({
               </Stack>
             </Stack>
 
+            <div className="bg-muted relative aspect-video overflow-hidden rounded-lg border">
+              <Image
+                src={achievement.cover}
+                alt=""
+                fill
+                priority
+                sizes="(min-width: 768px) 48rem, 100vw"
+                className="object-cover"
+              />
+            </div>
+
+            <p className="text-foreground/90 text-lg">{achievement.summary}</p>
+
             {achievement.metrics.length > 0 ? (
               <Cluster
                 as="ul"
@@ -79,15 +98,52 @@ export default async function AchievementPage({
               </Cluster>
             ) : null}
 
-            <Stack as="section" gap="sm">
-              <h2 className="text-xl font-semibold">{t("overview")}</h2>
-              <p className="text-muted-foreground">{achievement.summary}</p>
-            </Stack>
+            {achievement.chapters.map((chapter) => (
+              <Stack as="section" key={chapter.title ?? "main"} gap="lg">
+                {chapter.title ? (
+                  <h2 className="text-2xl font-semibold tracking-tight">
+                    {chapter.title}
+                  </h2>
+                ) : null}
+                {chapter.summary ? (
+                  <p className="text-muted-foreground">{chapter.summary}</p>
+                ) : null}
 
-            <Stack as="section" gap="sm">
-              <h2 className="text-xl font-semibold">{t("impact")}</h2>
-              <p className="text-muted-foreground">{achievement.impact}</p>
-            </Stack>
+                <Stack as="ul" gap="sm">
+                  {chapter.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="text-muted-foreground flex gap-2.5 text-sm"
+                    >
+                      <span
+                        className="bg-brand mt-2 size-1.5 shrink-0 rounded-full"
+                        aria-hidden
+                      />
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </Stack>
+
+                <Stack gap="sm">
+                  <h3 className="text-muted-foreground text-xs font-semibold tracking-widest uppercase">
+                    {t("impact")}
+                  </h3>
+                  <Stack as="ul" gap="sm">
+                    {chapter.outcomes.map((outcome) => (
+                      <li key={outcome} className="flex gap-2.5 text-sm">
+                        <Check
+                          aria-hidden
+                          className="text-brand mt-0.5 size-4 shrink-0"
+                        />
+                        <span>{outcome}</span>
+                      </li>
+                    ))}
+                  </Stack>
+                </Stack>
+
+                <AchievementGallery images={chapter.gallery} />
+              </Stack>
+            ))}
 
             <Stack as="section" gap="sm">
               <h2 className="text-xl font-semibold">{t("tech")}</h2>

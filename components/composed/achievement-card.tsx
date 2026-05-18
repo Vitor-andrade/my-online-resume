@@ -1,16 +1,19 @@
 import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
 import { Cluster, Stack } from "@/components/layout";
 import type { Achievement } from "@/content";
 import { Link } from "@/i18n/navigation";
 import { Metric } from "./metric";
 import { TechBadge } from "./tech-badge";
 
-/** Card for a key achievement — links to its dedicated case-study route. */
+/** Card for a key achievement — cover banner plus a summary, linking
+ *  to its dedicated case-study route. */
 export function AchievementCard({
   slug,
   title,
   organization,
   period,
+  cover,
   summary,
   metrics,
   tech,
@@ -18,9 +21,19 @@ export function AchievementCard({
   return (
     <Link
       href={`/achievements/${slug}`}
-      className="group bg-card hover:border-brand/40 hover:shadow-brand/25 focus-visible:ring-ring relative block rounded-lg border p-5 transition-all hover:z-10 hover:scale-[1.03] hover:shadow-xl focus-visible:ring-2 focus-visible:outline-none sm:p-6"
+      className="group bg-card hover:border-brand/40 hover:shadow-brand/25 focus-visible:ring-ring relative block overflow-hidden rounded-lg border transition-all hover:z-10 hover:scale-[1.03] hover:shadow-xl focus-visible:ring-2 focus-visible:outline-none"
     >
-      <Stack gap="md">
+      <div className="bg-muted relative aspect-video">
+        <Image
+          src={cover}
+          alt=""
+          fill
+          sizes="(min-width: 1024px) 22rem, (min-width: 640px) 45vw, 90vw"
+          className="object-cover"
+        />
+      </div>
+
+      <Stack gap="md" className="p-5 sm:p-6">
         <Stack gap="xs">
           <Cluster justify="between" align="start" gap="sm">
             <h3 className="text-lg font-semibold">{title}</h3>
