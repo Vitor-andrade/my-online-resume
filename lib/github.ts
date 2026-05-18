@@ -1,56 +1,83 @@
 import { z } from "zod";
 import type { Project } from "@/content";
+import { serverEnv } from "@/lib/env";
 
 const GITHUB_USER = "Vitor-andrade";
 
-const repoSchema = z.object({
+const pinnedRepoSchema = z.object({
   name: z.string(),
   description: z.string().nullable(),
-  html_url: z.url(),
-  language: z.string().nullable(),
-  topics: z.array(z.string()).default([]),
-  fork: z.boolean(),
-  archived: z.boolean(),
-  stargazers_count: z.number(),
+  url: z.url(),
+  primaryLanguage: z.object({ name: z.string() }).nullable(),
+  repositoryTopics: z.object({
+    nodes: z.array(z.object({ topic: z.object({ name: z.string() }) })),
+  }),
 });
 
-const reposSchema = z.array(repoSchema);
+const pinnedResponseSchema = z.object({
+  data: z.object({
+    user: z.object({
+      pinnedItems: z.object({ nodes: z.array(pinnedRepoSchema) }),
+    }),
+  }),
+});
+
+const PINNED_REPOS_QUERY = `
+  query {
+    user(login: "${GITHUB_USER}") {
+      pinnedItems(first: 6, types: REPOSITORY) {
+        nodes {
+          ... on Repository {
+            name
+            description
+            url
+            primaryLanguage { name }
+            repositoryTopics(first: 5) {
+              nodes { topic { name } }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
 
 /**
- * Fetches the user's public repositories from the GitHub REST API and
- * maps them to the Project shape so the Projects section can reuse
- * ProjectCard. Unauthenticated (no token, no cost); cached with ISR.
- * Returns an empty list on any failure so the section degrades to the
- * curated projects only.
+ * Fetches the user's pinned repositories from the GitHub GraphQL API
+ * and maps them to the Project shape so the Projects section can
+ * reuse ProjectCard. Pinned repos are a deliberately curated set, so
+ * they are shown as-is (no sorting). Requires GITHUB_TOKEN; cached
+ * with ISR. Returns an empty list on any failure — or when no token
+ * is set — so the section degrades to the curated projects only.
  */
-export async function getTopRepositories(limit = 4): Promise<Project[]> {
+export async function getTopRepositories(): Promise<Project[]> {
+  if (!serverEnv.GITHUB_TOKEN) return [];
+
   try {
-    const response = await fetch(
-      `https://api.github.com/users/${GITHUB_USER}/repos?per_page=100&sort=updated`,
-      {
-        headers: { Accept: "application/vnd.github+json" },
-        next: { revalidate: 3600 },
+    const response = await fetch("https://api.github.com/graphql", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${serverEnv.GITHUB_TOKEN}`,
+        "Content-Type": "application/json",
       },
-    );
+      body: JSON.stringify({ query: PINNED_REPOS_QUERY }),
+      next: { revalidate: 3600 },
+    });
     if (!response.ok) return [];
 
-    const repos = reposSchema.parse(await response.json());
+    const json = pinnedResponseSchema.parse(await response.json());
 
-    return repos
-      .filter((repo) => !repo.fork && !repo.archived && repo.description)
-      .sort((a, b) => b.stargazers_count - a.stargazers_count)
-      .slice(0, limit)
-      .map((repo) => ({
-        name: repo.name,
-        description: repo.description ?? "",
-        githubUrl: repo.html_url,
-        stack:
-          repo.topics.length > 0
-            ? repo.topics.slice(0, 5)
-            : repo.language
-              ? [repo.language]
-              : ["Repository"],
-      }));
+    return json.data.user.pinnedItems.nodes.map((repo) => ({
+      name: repo.name,
+      description: repo.description ?? "",
+      githubUrl: repo.url,
+      stack:
+        repo.repositoryTopics.nodes.length > 0
+          ? repo.repositoryTopics.nodes.map((node) => node.topic.name)
+          : repo.primaryLanguage
+            ? [repo.primaryLanguage.name]
+            : ["Repository"],
+    }));
   } catch {
     return [];
   }

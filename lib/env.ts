@@ -12,11 +12,13 @@ const serverEnv = z
     RESEND_API_KEY: z.string().optional(),
     CONTACT_TO_EMAIL: z.email().optional(),
     TURNSTILE_SECRET_KEY: z.string().optional(),
+    GITHUB_TOKEN: z.string().optional(),
   })
   .parse({
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     CONTACT_TO_EMAIL: process.env.CONTACT_TO_EMAIL,
     TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
+    GITHUB_TOKEN: process.env.GITHUB_TOKEN,
   });
 
 const clientEnv = z
