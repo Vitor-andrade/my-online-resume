@@ -1,0 +1,52 @@
+name: Deploy
+
+# Production deploy to Vercel — runs only after the CI workflow finishes
+# on `main`, and the job itself is skipped unless CI actually passed.
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+
+# Never run two production deploys at once, and let an in-flight one
+# finish rather than cancelling it half-way.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+# Least privilege: the deploy only needs to read the repository.
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Vercel production
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    # workflow_run fires for any CI conclusion — gate on success.
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    environment:
+      name: production
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull Vercel project settings and env
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy to production
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}

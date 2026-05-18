@@ -36,9 +36,16 @@ describe("achievementSchema", () => {
     title: "A Case Study",
     organization: "Acme",
     period: "2024",
+    cover: "/achievements/my-case-study.png",
     summary: "Summary",
     impact: "Impact",
     tech: ["Next.js"],
+    chapters: [
+      {
+        highlights: ["Did a thing"],
+        outcomes: ["It worked"],
+      },
+    ],
   };
 
   it("defaults metrics to an empty array", () => {
