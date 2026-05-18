@@ -69,6 +69,7 @@ export async function POST(request: Request) {
   });
 
   if (error) {
+    console.error("[api/contact] Resend send failed:", error);
     return NextResponse.json(
       { ok: false, error: "send_failed" },
       { status: 502 },

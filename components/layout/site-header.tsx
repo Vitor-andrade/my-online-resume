@@ -1,4 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
+import { ShareButton } from "@/components/composed/share-button";
 import { Cluster, Container } from "@/components/layout";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { LanguageSwitch } from "@/components/language-switch";
@@ -27,6 +28,10 @@ export async function SiteHeader() {
     label: t(key),
   }));
 
+  const linkedInUrl = profile.socials.find(
+    (s) => s.platform === "linkedin",
+  )?.url;
+
   return (
     <header className="border-border/60 bg-background/80 sticky top-0 z-40 border-b backdrop-blur">
       <Container size="lg" className="py-3">
@@ -51,12 +56,22 @@ export async function SiteHeader() {
               </Cluster>
             </nav>
             <Cluster gap="xs">
+              <ShareButton
+                variant="outline"
+                size="icon"
+                linkedInUrl={linkedInUrl}
+              />
               <LanguageSwitch />
               <ThemeToggle />
             </Cluster>
           </Cluster>
 
           <Cluster gap="xs" className="md:hidden">
+            <ShareButton
+              variant="outline"
+              size="icon"
+              linkedInUrl={linkedInUrl}
+            />
             <LanguageSwitch />
             <ThemeToggle />
             <MobileNav items={navItems} />

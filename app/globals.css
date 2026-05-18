@@ -310,4 +310,11 @@
   [data-print-hidden] {
     display: none !important;
   }
+
+  /* Force A4 portrait so the CV always prints upright regardless of the
+     browser's last-used orientation. */
+  @page {
+    size: A4 portrait;
+    margin: 12mm;
+  }
 }

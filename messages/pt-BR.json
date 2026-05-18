@@ -100,5 +100,13 @@
     "printResume": "Currículo para impressão",
     "designSystem": "Design System",
     "builtWith": "Construído com Next.js · Feito com Claude + Cursor"
+  },
+  "share": {
+    "label": "Compartilhar",
+    "ariaLabel": "Compartilhar este perfil",
+    "native": "Compartilhar via…",
+    "linkedin": "Perfil no LinkedIn",
+    "copyLink": "Copiar link",
+    "copied": "Link copiado!"
   }
 }
