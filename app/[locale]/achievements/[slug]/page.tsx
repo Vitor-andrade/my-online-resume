@@ -147,10 +147,10 @@ export default async function AchievementPage({
 
             <Stack as="section" gap="sm">
               <h2 className="text-xl font-semibold">{t("tech")}</h2>
-              <Cluster as="ul" gap="xs">
+              <Cluster as="ul" gap="sm">
                 {achievement.tech.map((item) => (
                   <li key={item}>
-                    <TechBadge name={item} />
+                    <TechBadge name={item} size="lg" />
                   </li>
                 ))}
               </Cluster>
