@@ -1,4 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
+import { AuroraBackground } from "@/components/backgrounds/aurora-background";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { SiteHeader } from "@/components/layout/site-header";
 import { Reveal } from "@/components/reveal";
@@ -21,6 +22,7 @@ export default async function HomePage({
 
   return (
     <>
+      <AuroraBackground />
       <SiteHeader />
       <main className="flex-1">
         <Hero />

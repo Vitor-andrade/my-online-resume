@@ -104,6 +104,27 @@
   --sidebar-accent-foreground: var(--gh-green-700);
   --sidebar-border: var(--paper-300);
   --sidebar-ring: var(--gh-green-600);
+
+  /* Aurora background — consumed by components/backgrounds. The green
+     ribbon is theme-independent; the streak layer uses `--background`
+     so its opaque bands always match the page and only the gaps reveal
+     the green, on both light and dark themes. */
+  --aurora-gradient: repeating-linear-gradient(
+    100deg,
+    var(--gh-green-400) 10%,
+    var(--gh-green-500) 15%,
+    var(--gh-green-600) 20%,
+    var(--gh-green-500) 25%,
+    var(--gh-green-700) 30%
+  );
+  --aurora-streaks: repeating-linear-gradient(
+    100deg,
+    var(--background) 0%,
+    var(--background) 7%,
+    transparent 10%,
+    transparent 12%,
+    var(--background) 16%
+  );
 }
 
 /* Dark theme — the project's primary aesthetic */
@@ -207,6 +228,25 @@
     }
     50% {
       transform: translateY(3px);
+    }
+  }
+
+  /* Aurora borealis — a green repeating-gradient swept across the top
+     of the page. The `aurora` keyframe scrolls the gradient's
+     background-position; pure CSS (no JS), paused for reduced-motion
+     users by the global rule below. */
+  --animate-aurora: aurora 60s linear infinite;
+
+  @keyframes aurora {
+    from {
+      background-position:
+        50% 50%,
+        50% 50%;
+    }
+    to {
+      background-position:
+        350% 50%,
+        350% 50%;
     }
   }
 }
