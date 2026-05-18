@@ -13,7 +13,7 @@
  * `--background`) and paused for reduced-motion users.
  */
 const TOP_MASK =
-  "radial-gradient(ellipse 120% 100% at 50% 0%, black 8%, transparent 100%)";
+  "radial-gradient(ellipse 120% 100% at 50% 0%, black 8%, transparent 85%)";
 
 export function AuroraBackground() {
   return (
@@ -33,7 +33,7 @@ export function AuroraBackground() {
           "after:[background-image:var(--aurora-streaks),var(--aurora-gradient)]",
           "after:[background-size:200%,_100%]",
           "after:[background-attachment:fixed]",
-          "after:mix-blend-difference",
+          "after:[mix-blend-mode:var(--aurora-blend)]",
           "after:animate-aurora",
         ].join(" ")}
       />

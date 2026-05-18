@@ -125,6 +125,10 @@
     transparent 12%,
     var(--background) 16%
   );
+  /* Blend for the animated ::after copy. `multiply` darkens the green
+     ribbons against the light page; the dark theme overrides this with
+     a plain `normal` blend (no mixing) so the glow stays green. */
+  --aurora-blend: multiply;
 }
 
 /* Dark theme — the project's primary aesthetic */
@@ -165,6 +169,10 @@
   --sidebar-accent-foreground: var(--gh-green-400);
   --sidebar-border: var(--ink-700);
   --sidebar-ring: var(--gh-green-500);
+
+  /* No blend on the dark theme — the ::after copy just overlays the
+     base so the aurora keeps its green (see `--aurora-blend` above). */
+  --aurora-blend: normal;
 }
 
 /* ---------- TAILWIND THEME MAPPING ---------- */
