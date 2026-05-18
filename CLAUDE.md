@@ -140,7 +140,7 @@ See [`AGENTS.md`](./AGENTS.md) for the full roster and which agent to invoke for
 3. **Branch per phase/feature.** PRs run the full CI matrix; CodeRabbit reviews automatically.
 4. **Challenge big decisions.** Before locking an architectural choice, run the `devils-advocate` agent (see `AGENTS.md`).
 5. **Update the briefing.** When a decision changes, update `BRIEFING.md` §4, §7 and §11.
-6. **AI co-authorship is disclosed.** Commits authored with Claude carry the `Co-Authored-By: Claude` trailer. Development with Claude + Cursor is stated in `README.md`.
+6. **AI-assisted development is disclosed in `README.md`.** Do not add a `Co-Authored-By` trailer to commit messages — keep commit messages to their content only.
 
 ## 10. What NOT to do
 

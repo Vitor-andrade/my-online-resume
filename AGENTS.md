@@ -74,7 +74,7 @@ Skills live in `skills/<name>/SKILL.md`. Invoke the matching skill instead of im
 - **Security before release.** The **Security Reviewer** + `security-review` skill run before any production deploy and whenever the contact form, API routes or dependencies change.
 - **Instructions are binding.** When touching Next.js code, follow `instructions/nextjs*.instructions.md`. When touching `.github/workflows/`, follow `instructions/github-actions-ci-cd-best-practices.instructions.md`.
 - **Stay in scope.** Agents implement the current phase only; new ideas become TODOs in `BRIEFING.md`.
-- **Disclose AI authorship.** Commits authored with Claude carry the `Co-Authored-By: Claude` trailer.
+- **No `Co-Authored-By` trailer.** Commit messages carry their content only; AI-assisted development is disclosed in `README.md`.
 
 ## 6. For other AI tools (Cursor, Copilot, etc.)
 
