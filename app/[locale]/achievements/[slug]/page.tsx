@@ -78,7 +78,7 @@ export default async function AchievementPage({
                 fill
                 priority
                 sizes="(min-width: 768px) 48rem, 100vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
 

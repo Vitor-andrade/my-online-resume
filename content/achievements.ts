@@ -179,7 +179,7 @@ const achievementSets = {
       title: "Cloud-Native Application Architecture",
       organization: "Fest",
       period: "2023 – 2024",
-      cover: "/Fest/Web/cover.JPG",
+      cover: "/Fest/App/cover.JPG",
       summary:
         "Delivered a cloud-native event platform — a ticketing web dashboard and a social mobile app forming one product — on a containerized, CI/CD-driven architecture with automated deploys.",
       impact:
