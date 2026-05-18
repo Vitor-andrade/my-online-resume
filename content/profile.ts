@@ -28,6 +28,16 @@ const profiles = {
   en: profileSchema.parse({
     name: "Vitor Cavalcante",
     role: "Senior Fullstack Engineer",
+    roles: [
+      "Senior Fullstack Engineer",
+      "Senior Fullstack Software Engineer",
+      "React Specialist",
+      "React Native Specialist",
+      "Node.js Specialist",
+      "Senior DevSecOps Engineer",
+      "AI Specialist",
+      "AI Engineer",
+    ],
     headline:
       "Senior Fullstack Engineer building scalable, cloud-native web and mobile platforms.",
     location: "Brasília, Brazil",
@@ -55,6 +65,16 @@ const profiles = {
   "pt-BR": profileSchema.parse({
     name: "Vitor Cavalcante",
     role: "Engenheiro Fullstack Sênior",
+    roles: [
+      "Engenheiro Fullstack Sênior",
+      "Engenheiro de Software Fullstack Sênior",
+      "Especialista em React",
+      "Especialista em React Native",
+      "Especialista em Node.js",
+      "Engenheiro DevSecOps Sênior",
+      "Especialista em IA",
+      "Engenheiro de IA",
+    ],
     headline:
       "Engenheiro Fullstack Sênior construindo plataformas web e mobile escaláveis e cloud-native.",
     location: "Brasília, Brasil",

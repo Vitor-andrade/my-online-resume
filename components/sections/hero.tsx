@@ -2,6 +2,7 @@ import { ArrowDown, FileDown } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Container, Stack } from "@/components/layout";
+import { RoleTyper } from "@/components/role-typer";
 import { buttonVariants } from "@/components/ui/button";
 import { getProfile } from "@/content";
 import type { Locale } from "@/i18n/routing";
@@ -24,7 +25,7 @@ export async function Hero() {
       <Stack gap="lg">
         <Stack gap="md">
           <span className="text-brand font-mono text-sm">
-            {profile.role} · {profile.location}
+            <RoleTyper roles={profile.roles} /> · {profile.location}
           </span>
           <h1
             id="hero-name"

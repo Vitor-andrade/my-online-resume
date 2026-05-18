@@ -31,6 +31,8 @@ export const languageSchema = z.object({
 export const profileSchema = z.object({
   name: z.string().min(1),
   role: z.string().min(1),
+  /** Titles cycled by the hero's typewriter; the first is the canonical one. */
+  roles: z.array(z.string().min(1)).min(1),
   headline: z.string().min(1),
   location: z.string().min(1),
   email: z.email(),
