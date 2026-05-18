@@ -17,13 +17,16 @@ export function TechBadge({ name, size = "default" }: TechBadgeProps) {
   return (
     <Badge
       variant="secondary"
-      className={cn("gap-1.5", isLarge && "gap-2 px-3 py-1 text-sm")}
+      className={cn(
+        "gap-1.5",
+        isLarge && "gap-2.5 px-[0.9rem] py-[0.3rem] text-[1.05rem]",
+      )}
     >
       {icon
         ? createElement(icon, {
             className: cn(
               "text-brand",
-              isLarge ? "size-[1.15rem]" : "size-[0.9625rem]",
+              isLarge ? "size-[1.38rem]" : "size-[0.9625rem]",
             ),
           })
         : null}
