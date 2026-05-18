@@ -15,7 +15,7 @@
 
 This repository hosts the source of an **online professional résumé** for **Vitor Cavalcante**, a Senior Fullstack Engineer with 6+ years of experience. It is deliberately more than a CV page: it is a **technical showcase**. The intent is that a recruiter or engineering lead can read the résumé _and_ inspect the repository, and both tell the same story — modern, scalable, accessible, secure engineering.
 
-The content structure is inspired by the [developerFolio](https://github.com/developerfolio/developerFolio) template, but **none of its code is reused**. developerFolio is a React 16 / Create React App project; this project is a clean, ground-up build on a current stack.
+The content structure is inspired by the [developerFolio](https://developerfolio.js.org/#opensource) template, but **none of its code is reused**. developerFolio is a React 16 / Create React App project; this project is a clean, ground-up build on a current stack.
 
 **Audience:** recruiters and engineering teams in the US, Canada and Europe. The product's primary language is English, with Brazilian Portuguese as a second locale and the translation layer structured to add Spanish and French later.
 
