@@ -12,7 +12,7 @@ import { routing } from "@/i18n/routing";
 import "../globals.css";
 
 const SITE_URL =
-  clientEnv.NEXT_PUBLIC_SITE_URL ?? "https://my-online-resume.vercel.app";
+  clientEnv.NEXT_PUBLIC_SITE_URL ?? "https://vitor-cavalcante.vercel.app/";
 
 const geistSans = Geist({
   variable: "--font-sans",

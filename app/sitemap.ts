@@ -3,7 +3,7 @@ import { achievementSlugs } from "@/content";
 import { routing } from "@/i18n/routing";
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://my-online-resume.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://vitor-cavalcante.vercel.app/";
 
 /** Builds a path for a locale — the default locale has no prefix. */
 function localized(locale: string, path: string): string {
