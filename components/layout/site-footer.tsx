@@ -1,4 +1,5 @@
 import { getLocale, getTranslations } from "next-intl/server";
+import { ShareButton } from "@/components/composed/share-button";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { getProfile } from "@/content";
@@ -23,7 +24,16 @@ export async function SiteFooter() {
                 {profile.role}
               </span>
             </Stack>
-            <SocialLinks links={profile.socials} />
+            <Cluster gap="sm" className="items-center">
+              <ShareButton
+                variant="ghost"
+                size="sm"
+                linkedInUrl={
+                  profile.socials.find((s) => s.platform === "linkedin")?.url
+                }
+              />
+              <SocialLinks links={profile.socials} />
+            </Cluster>
           </Cluster>
           <Cluster
             justify="between"

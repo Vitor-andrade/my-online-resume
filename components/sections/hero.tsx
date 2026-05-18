@@ -1,5 +1,6 @@
 import { ArrowDown, FileDown } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
+import { ShareButton } from "@/components/composed/share-button";
 import { SocialLinks } from "@/components/composed/social-links";
 import { Cluster, Container, Stack } from "@/components/layout";
 import { RoleTyper } from "@/components/role-typer";
@@ -64,6 +65,13 @@ export async function Hero() {
             <FileDown aria-hidden />
             {t("downloadCv")}
           </a>
+          <ShareButton
+            variant="outline"
+            size="lg"
+            linkedInUrl={
+              profile.socials.find((s) => s.platform === "linkedin")?.url
+            }
+          />
         </Cluster>
 
         <SocialLinks links={profile.socials} />

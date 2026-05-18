@@ -100,5 +100,13 @@
     "printResume": "Print CV",
     "designSystem": "Design System",
     "builtWith": "Built with Next.js · Crafted with Claude + Cursor"
+  },
+  "share": {
+    "label": "Share",
+    "ariaLabel": "Share this profile",
+    "native": "Share via…",
+    "linkedin": "LinkedIn profile",
+    "copyLink": "Copy link",
+    "copied": "Link copied!"
   }
 }
