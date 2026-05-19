@@ -1,5 +1,6 @@
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
@@ -67,6 +68,7 @@ export default async function LocaleLayout({
             <MotionProvider>{children}</MotionProvider>
           </NextIntlClientProvider>
         </PostHogProvider>
+        <Analytics />
       </body>
     </html>
   );
