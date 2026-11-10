@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 540" fill="none">
+  <defs>
+    <linearGradient id="bg" x2="960" y2="540" gradientUnits="userSpaceOnUse"><stop stop-color="#0a0a0f"/><stop offset="1" stop-color="#0a3d1c"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#39d353" stop-opacity=".22"/><stop offset="1" stop-color="#39d353" stop-opacity="0"/></radialGradient>
+  </defs>
+  <path fill="url(#bg)" d="M0 0h960v540H0z"/>
+  <ellipse cx="480" cy="270" rx="380" ry="250" fill="url(#glow)"/>
+  <g stroke="#39d353" stroke-width="2" opacity=".5"><path d="m240 160 240 110 240-110M240 380l240-110 240 110M480 90v180m0 0v180"/></g>
+  <g fill="#0d1117" stroke="#39d353" stroke-width="3"><rect x="200" y="120" width="80" height="80" rx="18"/><rect x="680" y="120" width="80" height="80" rx="18"/><rect x="200" y="340" width="80" height="80" rx="18"/><rect x="680" y="340" width="80" height="80" rx="18"/><circle cx="480" cy="90" r="28"/><circle cx="480" cy="450" r="28"/><circle cx="480" cy="270" r="72"/></g>
+  <g stroke="#dafbe1" stroke-width="5" stroke-linecap="round"><path d="m460 250-20 20 20 20m40-40 20 20-20 20m-25 8 10-36M222 160h36m-18-18v36m462-28h36m-36 20h24m-476 202h-20v18h20m462-18h36m-36 20h36"/></g>
+  <g fill="#39d353"><circle cx="480" cy="90" r="8"/><circle cx="480" cy="450" r="8"/></g>
+</svg>

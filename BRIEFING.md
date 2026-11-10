@@ -189,7 +189,7 @@ lib/
   sentry.ts
 
 public/
-  Vitor_Cavalcante_FullStack_Eng.pdf # CV oficial (download)
+  Vitor_Cavalcante_Software_Eng.pdf # CV oficial (download)
   favicons/...
 
 tests/
@@ -363,3 +363,12 @@ Cada fase com critérios de aceite e checkpoint para revisão.
 ---
 
 _Este arquivo é o ponto de retomada em caso de perda de contexto. Quando uma decisão grande mudar, atualizar a seção 4 (stack), a seção 11 (histórico) e a seção 7 (TODOs)._
+
+## Atualização de conteúdo — 2026-11-10
+
+- Posicionamento principal: Senior Software Engineer / Engenheiro de Software Sênior, mantendo atuação fullstack e destacando engenharia de IA.
+- micro1: Senior Software Engineer, julho de 2026–presente, conforme CV fornecido e LinkedIn; Click Planos e Evernow encerrados em julho de 2026.
+- Adicionados experiência e case de IA bilíngues: entrega de MVP apoiando contrato de ~US$700K, campanhas associadas a US$1M+, RAG/avaliações, MCP, observabilidade e automação de engenharia. Percentuais de melhoria são aproximados.
+- Nomes de clientes e produtos recentes omitidos; nome do empregador mantido no histórico profissional.
+- PDF fornecido pelo usuário: public/Vitor_Cavalcante_Software_Eng.pdf; arquivo antigo removido e botões configurados para download.
+- Sem mudança de stack, hospedagem ou integrações de produção.

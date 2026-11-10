@@ -58,8 +58,7 @@ export async function Hero() {
           </a>
           <a
             href={profile.resumePdf}
-            target="_blank"
-            rel="noopener noreferrer"
+            download
             className={buttonVariants({ variant: "outline", size: "lg" })}
           >
             <FileDown aria-hidden />

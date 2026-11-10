@@ -103,6 +103,87 @@ const FEST_APP_GALLERY = [
 const achievementSets = {
   en: [
     {
+      slug: "ai-platform-delivery",
+      period: "2026",
+      cover: "/ai-platform.svg",
+      tech: [
+        "React",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "AWS",
+        "Hatchet",
+        "LiveKit",
+        "RAG",
+        "MCP",
+        "Sentry",
+      ],
+      title: "AI Platform Delivery & Engineering Automation",
+      organization: "International AI product engineering",
+      summary:
+        "Owned an AI qualification platform from concept to production, combining conversational AI, scalable workflows and agent-assisted engineering.",
+      impact:
+        "Supported a first ~US$700K enterprise agreement and campaigns associated with US$1M+ in revenue.",
+      metrics: [
+        {
+          value: "~US$700K",
+          label: "first enterprise agreement supported",
+        },
+        {
+          value: "1,000+",
+          label: "requests per minute",
+        },
+        {
+          value: "~70%",
+          label: "higher personal task throughput",
+        },
+        {
+          value: "~60%",
+          label: "fewer production bugs",
+        },
+      ],
+      chapters: [
+        {
+          title: "From concept to production",
+          highlights: [
+            "Owned frontend, backend, architecture, databases and integrations, coordinating infrastructure provisioning with DevOps and release validation with QA.",
+            "Built configurable AI conversations incorporating company-specific requirements and context. Partnered with AI engineers on RAG workflows, conversation evaluations and model benchmarking.",
+            "Engineered calling campaigns and asynchronous workflows using Hatchet, NestJS, Redis and AWS, with bulk qualification and delivery-list tools for commercial teams.",
+          ],
+          outcomes: [
+            "Supported the platform’s first enterprise agreement worth approximately US$700K.",
+            "Enabled calling campaigns associated with US$1M+ in revenue and workflows supporting more than 1,000 requests per minute.",
+          ],
+        },
+        {
+          title: "Performance and reliability",
+          highlights: [
+            "Optimized interfaces handling millions of records with virtualized tables, dynamic pagination and TanStack tooling.",
+            "Implemented Sentry monitoring, automated engineering alerts and Slack integrations for early investigation of critical workflow failures.",
+            "Delivered integrations with eight external job boards and synchronized webcam/screen-share review tools for candidate assessment.",
+          ],
+          outcomes: [
+            "Reduced legacy load times from 5+ minutes to 30–90 seconds; new platform views loaded in under 20 seconds.",
+            "Enabled approximately 2× faster interview assessment.",
+            "Detected a critical defect early enough to help protect the ~US$700K enterprise agreement.",
+          ],
+        },
+        {
+          title: "MCP and multi-agent delivery",
+          highlights: [
+            "Integrated Slack, GitHub, Linear and Claude/Codex through MCP to connect task context, planning, parallel implementation, review and status tracking.",
+            "Established layered code and security reviews with GitHub Actions, Greptile, CodeRabbit and AI review agents, backed by unit and integration tests.",
+            "Automated end-of-day leadership reports covering completed work, blockers and next steps to improve handoffs across time zones.",
+          ],
+          outcomes: [
+            "Increased personal task completion throughput by approximately 70% and reduced response times by 30%.",
+            "AI-assisted workflows contributed to approximately 50% more deployments and 60% fewer production bugs.",
+            "Percentage improvements reflect internal workflow comparisons, rather than controlled experiments.",
+          ],
+        },
+      ],
+    },
+    {
       slug: "high-risk-project-recovery",
       title: "High-Risk Project Recovery",
       organization: "Finatec",
@@ -236,6 +317,87 @@ const achievementSets = {
     },
   ],
   "pt-BR": [
+    {
+      slug: "ai-platform-delivery",
+      period: "2026",
+      cover: "/ai-platform.svg",
+      tech: [
+        "React",
+        "NestJS",
+        "PostgreSQL",
+        "Redis",
+        "AWS",
+        "Hatchet",
+        "LiveKit",
+        "RAG",
+        "MCP",
+        "Sentry",
+      ],
+      title: "Entrega de Plataforma com IA e Automação de Engenharia",
+      organization: "Engenharia de produtos de IA em equipe internacional",
+      summary:
+        "Responsável por uma plataforma de qualificação com IA, do conceito à produção, combinando IA conversacional, fluxos escaláveis e engenharia assistida por agentes.",
+      impact:
+        "Apoiou um primeiro contrato de aproximadamente US$700 mil e campanhas associadas a mais de US$1 milhão em receita.",
+      metrics: [
+        {
+          value: "~US$700 mil",
+          label: "primeiro contrato empresarial apoiado",
+        },
+        {
+          value: "1.000+",
+          label: "requisições por minuto",
+        },
+        {
+          value: "~70%",
+          label: "mais tarefas individuais concluídas",
+        },
+        {
+          value: "~60%",
+          label: "menos bugs em produção",
+        },
+      ],
+      chapters: [
+        {
+          title: "Do conceito à produção",
+          highlights: [
+            "Responsável por frontend, backend, arquitetura, bancos de dados e integrações, coordenando o provisionamento de infraestrutura com DevOps e a validação de entregas com QA.",
+            "Construiu conversas com IA configuráveis, incorporando requisitos e contexto de cada empresa. Colaborou com engenheiros de IA em fluxos RAG, avaliações de conversas e benchmarking de modelos.",
+            "Desenvolveu campanhas de chamadas e fluxos assíncronos com Hatchet, NestJS, Redis e AWS, além de ferramentas de qualificação em lote e listas de empresas para as equipes comerciais.",
+          ],
+          outcomes: [
+            "Apoiou o primeiro contrato empresarial da plataforma, de aproximadamente US$700 mil.",
+            "Viabilizou campanhas associadas a mais de US$1 milhão em receita e fluxos com mais de 1.000 requisições por minuto.",
+          ],
+        },
+        {
+          title: "Desempenho e confiabilidade",
+          highlights: [
+            "Otimizou interfaces com milhões de registros usando tabelas virtualizadas, paginação dinâmica e ferramentas TanStack.",
+            "Implementou monitoramento com Sentry, alertas automáticos para engenharia e integrações com Slack para investigação antecipada de falhas críticas.",
+            "Entregou integrações com oito portais de vagas e visualizações sincronizadas de webcam e compartilhamento de tela para avaliação de candidatos.",
+          ],
+          outcomes: [
+            "Reduziu carregamentos de mais de 5 minutos para 30–90 segundos no legado; novas visualizações carregavam em menos de 20 segundos.",
+            "Permitiu avaliações de entrevistas aproximadamente 2× mais rápidas.",
+            "Detectou um defeito crítico antecipadamente, ajudando a proteger o contrato empresarial de aproximadamente US$700 mil.",
+          ],
+        },
+        {
+          title: "MCP e entrega com múltiplos agentes",
+          highlights: [
+            "Integrou Slack, GitHub, Linear e Claude/Codex via MCP para conectar contexto de tarefas, planejamento, implementação paralela, revisão e acompanhamento de status.",
+            "Estabeleceu revisões de código e segurança em camadas com GitHub Actions, Greptile, CodeRabbit e agentes de IA, apoiadas por testes unitários e de integração.",
+            "Automatizou relatórios de fim de dia para a liderança com entregas, bloqueios e próximos passos, melhorando passagens de contexto entre fusos horários.",
+          ],
+          outcomes: [
+            "Aumentou a conclusão de tarefas individuais em aproximadamente 70% e reduziu tempos de resposta em 30%.",
+            "Os fluxos assistidos por IA contribuíram para aproximadamente 50% mais deploys e 60% menos bugs em produção.",
+            "Os percentuais refletem comparações internas dos fluxos de trabalho, não experimentos controlados.",
+          ],
+        },
+      ],
+    },
     {
       slug: "high-risk-project-recovery",
       title: "Recuperação de Projeto de Alto Risco",

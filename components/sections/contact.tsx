@@ -33,8 +33,7 @@ export async function Contact() {
           <Cluster gap="sm" align="center">
             <a
               href={profile.resumePdf}
-              target="_blank"
-              rel="noopener noreferrer"
+              download
               className={buttonVariants({ variant: "outline" })}
             >
               <FileDown aria-hidden />
