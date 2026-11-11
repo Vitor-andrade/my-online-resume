@@ -104,7 +104,7 @@ const achievementSets = {
   en: [
     {
       slug: "ai-platform-delivery",
-      period: "2026",
+      period: "Jul – Nov 2026",
       cover: "/ai-platform.svg",
       tech: [
         "React",
@@ -319,7 +319,7 @@ const achievementSets = {
   "pt-BR": [
     {
       slug: "ai-platform-delivery",
-      period: "2026",
+      period: "Jul – Nov 2026",
       cover: "/ai-platform.svg",
       tech: [
         "React",

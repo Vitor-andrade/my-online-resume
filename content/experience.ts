@@ -8,7 +8,7 @@ const experiences = {
       role: "Senior Software Engineer",
       location: "Remote · International team",
       start: "2026-07",
-      end: null,
+      end: "2026-11",
       highlights: [
         "Owned architecture and fullstack delivery of an AI-powered company qualification platform from concept to production MVP, supporting its first ~US$700K enterprise agreement. Led frontend, backend, database, integration and architectural decisions, coordinating infrastructure provisioning with DevOps.",
         "Built configurable AI conversations with company-specific context and RAG workflows. Partnered with AI engineers on conversation evaluations and model benchmarking to improve qualification accuracy and conversation quality.",
@@ -154,7 +154,7 @@ const experiences = {
       role: "Engenheiro de Software Sênior",
       location: "Remoto · Equipe internacional",
       start: "2026-07",
-      end: null,
+      end: "2026-11",
       highlights: [
         "Responsável pela arquitetura e entrega fullstack de uma plataforma de qualificação de empresas com IA, do conceito ao MVP em produção, apoiando seu primeiro contrato empresarial de aproximadamente US$700 mil. Liderou decisões de frontend, backend, bancos de dados, integrações e arquitetura, coordenando o provisionamento de infraestrutura com DevOps.",
         "Construiu conversas de IA configuráveis com contexto específico de cada empresa e fluxos RAG. Colaborou com engenheiros de IA em avaliações de conversas e benchmarking de modelos para melhorar a precisão da qualificação e a qualidade das interações.",
