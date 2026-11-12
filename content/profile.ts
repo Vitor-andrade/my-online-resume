@@ -45,7 +45,7 @@ const profiles = {
     phone: "+55 61 99975-7431",
     summary: [
       "Senior Software Engineer with 6+ years designing and scaling cloud-native web and mobile solutions using React, Next.js, React Native, Node.js, NestJS, TypeScript and AWS.",
-      "Brings hands-on AI engineering experience integrating conversational agents, RAG workflows, model evaluations and MCP-based automation. Owned end-to-end delivery of an AI-powered platform in an international team, supporting its first ~US$700K enterprise agreement.",
+      "Brings hands-on AI engineering experience building conversational agents, HubSpot-to-PostgreSQL RAG pipelines, cross-call context, prompt engineering and MCP-based automation. Owned end-to-end delivery of an AI-powered platform in an international team, supporting its first ~US$700K enterprise agreement.",
       "Previously led internationalization of a platform serving 1M+ users, reducing support tickets by 30% and enabling expansion into Europe and the US. Combines fullstack ownership with CI/CD automation, observability and secure development practices.",
     ],
     socials: SOCIALS,
@@ -81,7 +81,7 @@ const profiles = {
     phone: "+55 61 99975-7431",
     summary: [
       "Engenheiro de Software Sênior com mais de 6 anos projetando e escalando soluções web e mobile cloud-native com React, Next.js, React Native, Node.js, NestJS, TypeScript e AWS.",
-      "Experiência prática em engenharia de IA, integrando agentes conversacionais, fluxos RAG, avaliação de modelos e automação via MCP. Responsável pela entrega de ponta a ponta de uma plataforma com IA em uma equipe internacional, apoiando seu primeiro contrato empresarial de aproximadamente US$700 mil.",
+      "Experiência prática em engenharia de IA, construindo agentes conversacionais, pipelines RAG entre HubSpot e PostgreSQL, contexto entre chamadas, engenharia de prompts e automação via MCP. Responsável pela entrega de ponta a ponta de uma plataforma com IA em uma equipe internacional, apoiando seu primeiro contrato empresarial de aproximadamente US$700 mil.",
       "Liderou a internacionalização de uma plataforma com mais de 1 milhão de usuários, reduzindo chamados de suporte em 30% e viabilizando expansão para Europa e Estados Unidos. Combina atuação fullstack com automação de CI/CD, observabilidade e desenvolvimento seguro.",
     ],
     socials: SOCIALS,

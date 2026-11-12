@@ -144,6 +144,30 @@ const achievementSets = {
       ],
       chapters: [
         {
+          title: "RAG ingestion and contextual memory",
+          highlights: [
+            "Implemented HubSpot integration and hourly Hatchet synchronization into PostgreSQL vector storage, including data persistence and chunking. Shared embedding work with the AI engineer; the retrieval workflow included reranking.",
+            "Built the backend that assembled company-specific requirements and retrieved context before each LiveKit call. Included information from previous company calls to provide contextual memory across conversations.",
+          ],
+          outcomes: [
+            "Connected CRM data and prior call records to the conversation context through a repeatable ingestion and retrieval workflow.",
+            "Owned the ingestion and backend context pipeline, while collaborating with the AI engineer on embeddings and agent configuration.",
+          ],
+        },
+        {
+          title: "Agent orchestration and human evaluation",
+          highlights: [
+            "Integrated OpenAI-powered conversations through LiveKit, prioritizing latency and conversation quality for live calls. Built backend APIs supporting scoring and received call outputs through webhooks.",
+            "Kept persistence in the backend: stored transcripts, summaries and scores in PostgreSQL and exposed them with recordings in analytical reports. Added retries, interruption handling and graceful shutdown.",
+            "Refined prompts, instructions, retrieval and agent configuration for answer handling, question progression, call termination and conversational personality. This work involved behavior tuning rather than model weight training.",
+            "Reviewed generated reports, transcripts and recordings with AI engineers against defined call-quality parameters, looking for factual errors, overconfidence, topic drift and unwanted behavior.",
+          ],
+          outcomes: [
+            "Separated conversational behavior, backend-defined scoring rules and durable data storage.",
+            "Used human evaluation findings to guide instruction changes, retrieval adjustments and workflow refactors.",
+          ],
+        },
+        {
           title: "From concept to production",
           highlights: [
             "Owned frontend, backend, architecture, databases and integrations, coordinating infrastructure provisioning with DevOps and release validation with QA.",
@@ -358,6 +382,30 @@ const achievementSets = {
         },
       ],
       chapters: [
+        {
+          title: "Ingestão RAG e memória contextual",
+          highlights: [
+            "Implementou integração HubSpot e sincronização horária com Hatchet em armazenamento vetorial PostgreSQL, incluindo persistência e divisão em chunks. Compartilhou o trabalho de embeddings com o engenheiro de IA; o fluxo de recuperação incluía reranking.",
+            "Construiu o backend que reunia requisitos e contexto relevante da empresa antes de cada chamada LiveKit. Incorporou informações de chamadas anteriores para fornecer memória contextual entre conversas.",
+          ],
+          outcomes: [
+            "Conectou dados do CRM e registros de chamadas anteriores ao contexto das conversas por um fluxo recorrente de ingestão e recuperação.",
+            "Foi responsável pela ingestão e montagem de contexto no backend, colaborando com o engenheiro de IA em embeddings e configuração do agente.",
+          ],
+        },
+        {
+          title: "Orquestração de agentes e avaliação humana",
+          highlights: [
+            "Integrou conversas com modelos OpenAI via LiveKit, priorizando latência e qualidade para chamadas ao vivo. Construiu APIs de backend para apoiar a pontuação e recebeu resultados via webhooks.",
+            "Manteve a persistência no backend: armazenou transcrições, resumos e pontuações em PostgreSQL e os apresentou com gravações em relatórios analíticos. Adicionou retentativas, tratamento de interrupções e encerramento controlado.",
+            "Refinou prompts, instruções, recuperação e configuração do agente para lidar com respostas, conduzir perguntas, encerrar chamadas e melhorar a personalidade conversacional. O trabalho foi ajuste de comportamento, sem treinamento dos pesos do modelo.",
+            "Revisou relatórios, transcrições e gravações com engenheiros de IA segundo parâmetros de qualidade das chamadas, buscando erros factuais, excesso de confiança, desvios de assunto e comportamentos indesejados.",
+          ],
+          outcomes: [
+            "Separou comportamento conversacional, regras de pontuação definidas no backend e armazenamento persistente.",
+            "Usou resultados das avaliações humanas para orientar ajustes de instruções, recuperação e refatorações dos fluxos.",
+          ],
+        },
         {
           title: "Do conceito à produção",
           highlights: [
